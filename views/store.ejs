@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Proyecto Dilan</title>
+    <meta name="description" content="This is the description">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a077a0470e.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://checkout.stripe.com/checkout.js" defer></script>
+    <!-- Date picker -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+    <script>
+        var title = "hey"
+        var price = "233"
+        $(document).ready(function () {
+            var date_input = $('input[name="date"]'); //our date input has the name "date"
+            var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+            var options = {
+                format: 'mm/dd/yyyy',
+                container: container,
+                todayHighlight: true,
+                autoclose: true,
+
+            };
+            date_input.datepicker(options);
+        });
+
+        function submitEmailForm(form) {
+            var obj = new XMLHttpRequest();
+            obj.onreadystatechange = function () {
+                if (obj.readyState == 4) {
+                    if (obj.status == 200) {
+                        var res = JSON.parse(obj.responseText);
+                        alert(res.message);
+                    }
+                    else {
+                        alert("XMLHttp status " + obj.status + ": " + obj.statusText);
+                    }
+                }
+            };
+            obj.open("post", form.action, true);
+            obj.setRequestHeader("Content-Type", "application/json"); // NOTICE: "application/json"
+            obj.send(JSON.stringify({ name: form.name.value, number: form.tel.value, email: form.email.value, message: form.message.value, date: form.date.value, hour: form.hour.value, checkbox: form.checkbox.value, pedido: [form.title.value, "cantidad: " + form.quantity.value] }));
+            $('form').trigger("reset");
+            alert("¡Obtuvimos tus datos exitosamente!")
+            return false;
+
+        }
+    </script>
+    <!-- Date picker ends -->
+    <script>
+        var stripePublicKey = '<%= stripePublicKey %>'
+    </script>
+    <script src="store.js" defer></script>
+</head>
+
+<body>
+    <div class="contactohead">
+        <div class="bg-dark center preFooter">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm"></div>
+                    <div class="col-sm">
+                        <a href="https://api.whatsapp.com/send?phone=525588488288" target="_blank"
+                            rel="noopener noreferrer"><i class="fab fa-whatsapp" style="color: lime;"> <span
+                                    style="color: rgb(187, 186, 186);" class="font">CONTÁCTANOS POR
+                                    WHATSAPP</span></i></a>
+                    </div>
+                    <div class="col-sm"><a href="#" target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-facebook fa-w-14 fa-lg" style="color: #5482e6; "></i></a>&nbsp; &nbsp;<a
+                            href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram fa-w-14 fa-lg"
+                                style="color: #ca364a;"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; position: fixed;">
+        <a class="navbar-brand" href="#">THE WOW BOX</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active" style="padding-top: 2.5%;">
+                <h5>Shopping Cart  <i class="fas fa-shopping-cart fa-1x cartShop"> <span class="counterCart">0</span></i></h5>
+            </li>
+        </div>
+      </nav> -->
+    <div class="bannerTemporada">
+        <h1 style="color: white;">soy un banner de bannerTemporada</h1>
+    </div>
+
+    <div class="masterDiv container">
+        <div class="row">
+            <section class="container content-section" id="experienciasCards">
+                <h2 class="section-header">ELIGE UNA EXPERIENCIA</h2>
+                <br>
+                <div class="shop-items">
+                    <% items.experiencias.forEach(function(item){ %>
+                    <div class="shop-item" data-item-id="<%= item.id %>">
+                        <span class="shop-item-title"><%= item.name %></span>
+                        <img class="shop-item-image" src="Images/<%= item.imgName %>">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$<%= item.price / 100 %></span>
+                            <button class="btn btn-primary shop-item-button" type="button">AGREGAR</button>
+                        </div>
+                        <div class="moreDetails">
+                            <button class="btn btn-light" id="detail<%= item.id %>" type="button"><i class="fas fa-eye"
+                                    style="color: lightsteelblue;"></i> DETALLES</button>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+            </section>
+        </div>
+        <div class="row">
+            <section class="container">
+                <% items.experiencias.forEach(function(item){ %>
+                <div class="unit<%= item.id %>">
+                    <div class="row">
+                        <div class="col-sm-4 col-md-6">
+                            <div class="imgPre" style="background-image: url(Images/<%=item.imgName%>);">
+                                <!-- <div class="shop-item" data-item-id="<%= item.id %>">
+                                    <img class="shop-item-image" id="imgNameItem" src="Images/<%= item.imgName %>">
+                                </div> -->
+                            </div>
+                            <div class="carrosuel">
+                                <img src="Images/Album1.png"
+                                    class="rounded float-left imgCarrousel btn<%= item.id %>first" alt="img"
+                                    style="max-width: 100px; margin-left: 15%;" id="carr1">
+                                <img src="Images/Album2.png"
+                                    class="rounded float-left imgCarrousel btn<%= item.id %>second" alt="img"
+                                    id="carr2">
+                                <img src="Images/Album3.png"
+                                    class="rounded float-left imgCarrousel btn<%= item.id %>third" alt="img" id="carr3">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="container desc1Exp">
+                                <div class="shop-item" data-item-id="<%= item.id %>">
+                                    <img class="shop-item-image" id="" src="Images/<%= item.imgName %>"
+                                        style="display: none;">
+                                    <div class="shop-item-details">
+                                        <button class="btn btn-light btnRegresar" type="button"><i class="fas fa-undo"></i> ATRÁS</button>
+                                    </div>
+                                </div>
+                                <h4><span class="shop-item-title title2"><%= item.name %></span></h4>
+                                <h5><span class="shop-item-price">$<%= item.price / 100 %></span></h5>
+                                <h7 style="color: grey;">Impuesto y envío incluídos</h7>
+                                <div class="estrellas">
+                                    <i class="fas fa-star estrella"></i><i class="fas fa-star estrella"></i><i
+                                        class="fas fa-star estrella"></i><i class="fas fa-star estrella"></i><i
+                                        class="fas fa-star estrella"></i> <br> <span style="color: black;">17 personas
+                                        calificaron
+                                        con 5 estrellas esta experiencia</span></i>
+                                </div>
+                                <button class="btn btn-primary shop-item-button btnPreview"
+                                    type="button">AGREGAR</button>
+                            </div>
+                            <div class="desc1Exp2 container">
+                                <h4>Descripción</h4>
+                                <p style="color: grey;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Veritatis ipsum
+                                    velit placeat minima inventore iusto quaerat quia fugiat mollitia ipsa accusantium
+                                    in quas
+                                    dolores praesentium obcaecati, sequi neque. Quibusdam, culpa!</p>
+                            </div>
+                            <div class="desc1Exp2 container">
+                                <h4>Propósito de la experiencia</h4>
+                                <p style="color: grey;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Veritatis ipsum
+                                    velit placeat minima inventore iusto quaerat quia fugiat mollitia ipsa accusantium
+                                    in quas
+                                    dolores praesentium obcaecati, sequi neque. Quibusdam, culpa!</p>
+                            </div>
+                            <div class="desc1Exp2 container">
+                                <h4>Envío y entrega</h4>
+                                <p style="color: grey;">Recibe tu WOWBOX en la puerta de tu casa en el horario y día que
+                                    decidas</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <h4>Opiniones sobre esta experiencia</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 estrellas text-left">
+
+                                    <i class="fas fa-star estrella"></i><i class="fas fa-star estrella"></i><i
+                                        class="fas fa-star estrella"></i><i class="fas fa-star estrella"></i><i
+                                        class="fas fa-star estrella"></i> <br> <span style="color: black;">17 personas
+                                        calificaron
+                                        con 5 estrellas esta experiencia</span></i>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    Compartir mi opinión
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="opinion estrellas">
+                                <i class="fas fa-star estrella"></i><i class="fas fa-star estrella"></i><i
+                                    class="fas fa-star estrella"></i><i class="fas fa-star estrella"></i><i
+                                    class="fas fa-star estrella"></i></i>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <h5>La mejor experiencia que he tenido</h5>
+                            <h6 style="color: grey;">Rosa Rodríguez</h6>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem possimus quia
+                                laboriosam optio
+                                mollitia iure doloribus, quos, necessitatibus error sunt voluptatibus qui, ab
+                                accusantium commodi
+                                voluptate saepe aspernatur deleniti eos?</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="opinion estrellas">
+                                <i class="fas fa-star estrella"></i><i class="fas fa-star estrella"></i><i
+                                    class="fas fa-star estrella"></i><i class="fas fa-star estrella"></i><i
+                                    class="fas fa-star estrella"></i></i>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <h5>No me lo esperaba</h5>
+                            <h6 style="color: grey;">Gabriel Fernández</h6>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem possimus quia
+                                laboriosam optio
+                                mollitia iure doloribus, quos, necessitatibus error sunt voluptatibus qui, ab
+                                accusantium commodi
+                                voluptate saepe aspernatur deleniti eos?</p>
+                        </div>
+                    </div>
+                    <hr>
+
+                </div>
+                <% }) %>
+        </div>
+        </section>
+    </div>
+
+    </div>
+    <div class="zipCodeBrowser center">
+        <h4 class="zipBrowserTitle">Comprueba nuestra cobertura en tu localidad</h4>
+        <div class="container">
+            <div class="col-md"></div>
+            <div class="col-md">
+                <form id="formClass" onSubmit="return false;">
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="zipCodeInput"
+                            placeholder="Ingresa un código postal ej. 52930">
+                    </div>
+
+                </form>
+                <div style="text-align: left;">
+                    <button type="submit" class="btn btn-primary" id="descubrirbtn">Descubrir</button>
+                </div>
+            </div>
+            <div class="col-md"></div>
+        </div>
+    </div>
+    <div class="zipAlert bg-success center">
+        <h4>Soportamos tu localidad</h4>
+        <h5>¡Feliz compra!</h5>
+    </div>
+    <div class="zipAlert2 bg-warning center">
+        <h4>¡Lo sentimos!, aún no soportamos tu localidad</h4>
+        <div class="center">
+            <a href="https://api.whatsapp.com/send?phone=525588488288" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-whatsapp" style="color: rgb(4, 134, 4);"> <span style="color:black;"
+                        class="font">CONTÁCTANOS POR
+                        WHATSAPP PARA MÁS INFORMACIÓN</span></i></a>
+        </div>
+    </div>
+    <section class="formdiv">
+        <div class="formularioContacto container">
+            <div class="row">
+                <div class="col-md">
+                    <section class="subtitleContact">
+                        <h3 class="formTitle1">¡Casi terminamos!</h3>
+                        <br>
+                        <h5 class="formTitle2">—Compartenos tu información—</h5>
+                    </section>
+                </div>
+                <div class="col-md">
+                    <section class="card theForm">
+                        <h5 class="card-header contactHeader">Detalles de la entrega</h5>
+                        <section class="card-body">
+                            <form action="/ajax/email" method="POST" onsubmit="return submitEmailForm(this);"
+                                id="myForm">
+                                <section class="form-group">
+                                    <label for="name">Nombre Completo</label>
+                                    <input type="name" name="name" class="form-control" id="completeName"
+                                        aria-describedby="namelHelp">
+                                </section>
+                                <section class="form-group">
+                                    <label for="exampleInputEmail1">Correo Electrónico</label>
+                                    <input type="email" name="email" class="form-control" id="inputEmail1"
+                                        aria-describedby="emailHelp">
+                                    <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo
+                                        electrónico con
+                                        terceros.</small>
+                                </section>
+                                <section class="form-group">
+                                    <label for="number">Número de Celular</label>
+                                    <input type="number" name="tel" class="form-control" id="cellNumber"
+                                        aria-describedby="numberHelp">
+                                </section>
+                                <section class="form-group">
+                                    <label for="exampleFormControlTextarea1">Dirección de entrega</label>
+                                    <textarea class="form-control" name="message" id="exampleFormControlTextarea1"
+                                        rows="3"></textarea>
+                                </section>
+                                <div class="cart-items" name="products">
+                                </div>
+                                <section>
+                                    <div class="form-group">
+                                        <!-- Date input -->
+                                        <label class="control-label" for="date">Día de entrega</label>
+                                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY"
+                                            type="text" />
+                                    </div>
+                                </section>
+                                <div class="form-group">
+                                    <label for="hour">Selecciona la hora de entrega</label>
+                                    <select class="form-control" id="hour" name="hour">
+                                        <option>10:00-11:00 am</option>
+                                        <option>12:00-13:00 pm</option>
+                                        <option>14:00-15:00 pm</option>
+                                        <option>18:00-19:00 pm</option>
+                                    </select>
+                                </div>
+                                <section class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="checkbox">
+                                    <label class="form-check-label submitFormBtn" for="exampleCheck1">Sí, me gustaría
+                                        recibir novedades de Dilan</label>
+                                </section>
+                                <br>
+                                <button type="submit" class="btn btn-primary btn-lg submitFormBtn">Enviar</button>
+                                <br>
+                                <br>
+                                <a href="/policy" class="privacyPolicy">Respetamos tu privacidad</a>
+                                <br>
+
+                            </form>
+                        </section>
+                    </section>
+                    <!-- <section class="theForm">
+                    </section> -->
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+    <section class="container content-section purchDiv">
+        <h2 class="section-header">COMPLETAR PEDIDO</h2>
+        <div class="row">
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">$0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">COMPRAR</button>
+        </div>
+        <!-- <div class="cart-row">
+            <span class="cart-item cart-header cart-column">EXPERIENCIA</span>
+            <span class="cart-price cart-header cart-column">PRECIO</span>
+            <span class="cart-quantity cart-header cart-column">CANTIDAD</span>
+        </div>
+        <div class="cart-items">
+        </div> -->
+
+    </section>
+    
+    <footer class="main-footer">
+        <div class="container main-footer-container">
+            <h3 class="band-name">Proyecto Dilan</h3>
+            <ul class="nav footer-nav">
+                <li>
+                    <a href="https://www.youtube.com" target="_blank">
+                        <img src="Images/YouTube Logo.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.spotify.com" target="_blank">
+                        <img src="Images/Spotify Logo.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="Images/Facebook Logo.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="/assets/js/jqueryCounterupMin.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script type="text/javascript">
+
+
+
+        $("#descubrirbtn").on("click", function (event) {
+
+            var searchedZip = $("#zipCodeInput").val().trim();
+
+            searchedZipi = searchedZip.replace(/\s+/g, "");
+
+            console.log(searchedZipi);
+
+            $.get("/api/" + searchedZipi, function (data) {
+                console.log(data);
+                if (data === "Código postal sin cobertura") {
+                    $(".zipAlert").hide();
+                    $(".zipAlert2").toggle('slow');
+                    $(".formdiv").show();
+                    $('.submitFormBtn').prop('disabled', true);
+
+                } else if (data) {
+                    $(".zipAlert").toggle('slow');
+                    $(".zipAlert2").hide();
+                    $(".formdiv").show();
+                    $('.submitFormBtn').prop('disabled', false);
+
+                }
+            });
+        });
+
+        $(".submitFormBtn").on("click", function (event) {
+            $(".purchDiv").show();
+        });
+
+    </script>
+</body>
+
+</html>

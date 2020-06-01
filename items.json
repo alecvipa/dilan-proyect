@@ -1,0 +1,40 @@
+{
+    "experiencias": [
+      {
+        "id": 1,
+        "name": "Experiencia 1",
+        "price": 12950,
+        "imgName": "Album1.png"
+      },
+      {
+        "id": 2,
+        "name": "Experiencia 2",
+        "price": 14399,
+        "imgName": "Album2.png"
+      },
+      {
+        "id": 3,
+        "name": "Experiencia 3",
+        "price": 9939,
+        "imgName": "Album3.png"
+      },
+      {
+        "id": 4,
+        "name": "Experiencia 4",
+        "price": 19929,
+        "imgName": "Album4.png"
+      },
+      {
+        "id": 5,
+        "name": "Experiencia 5",
+        "price": 19939,
+        "imgName": "Shirt.png"
+      },
+      {
+        "id": 6,
+        "name": "Experiencia 6",
+        "price": 6919,
+        "imgName": "Cofee.png"
+      }
+    ]
+  }
