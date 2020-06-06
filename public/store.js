@@ -49,40 +49,70 @@ $(document).ready(function () {
     $("#detail1").on("click", function () {
         $(".unit1").show();
         $(".unit2, .unit3, .unit4, .unit5, .unit6, #experienciasCards").hide();
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+
     });
     $("#detail2").on("click", function () {
         $(".unit2").show();
         $(".unit1, .unit3, .unit4, .unit5, .unit6, #experienciasCards").hide();
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
     });
     $("#detail3").on("click", function () {
         $(".unit3").show();
         $(".unit1, .unit2, .unit4, .unit5, .unit6, #experienciasCards").hide();
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
     });
     $("#detail4").on("click", function () {
         $(".unit4").show();
         $(".unit1, .unit2, .unit3, .unit5, .unit6, #experienciasCards").hide();
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
     });
     $("#detail5").on("click", function () {
         $(".unit5").show();
         $(".unit1, .unit2, .unit3, .unit4, .unit6, #experienciasCards").hide();
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
     });
     $("#detail6").on("click", function () {
         $(".unit6").show();
         $(".unit1, .unit2, .unit3, .unit4, .unit5, #experienciasCards").hide();
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
     });
     $(".btnRegresar").on("click", function () {
         $("#experienciasCards").show();
-        $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6, .zipCodeBrowser, .zipAlert, .zipAlert2, .formdiv, .purchDiv").hide();
+        $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6, .zipCodeBrowser, .zipAlert, .zipAlert2, .formdiv, .purchDiv,.unit1Premium, .unit2Premium, .unit3Premium, .unit4Premium").hide();
     });
 
     // Función para pasar a Zip Code Validation
 
     $(".nxt1").on("click", function () {
         $("#experienciasCards").hide();
-        $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6").hide();
+        $(".unit1, .unit2, .unit3, .unit4, .unit1Premium, .unit2Premium, .unit3Premium, .unit4Premium").hide();
         $(".zipCodeBrowser").show(1000)
 
     });
+
+    // Función para ver premium box
+    $(".unit1Premium, .unit2Premium, .unit3Premium, .unit4Premium").hide();
+
+    $(".btnRwow1").on("click", function(){
+        $(".unit1Premium, .unit2Premium, .unit3Premium, .unit4Premium, .unit2, .unit3, .unit4").hide();
+        $(".unit1").show();
+    });
+    $(".btnRwow2").on("click", function(){
+        $(".unit1Premium, .unit2Premium, .unit3Premium, .unit4Premium, .unit1, .unit3, .unit4").hide();
+        $(".unit2").show();
+    });
+    $(".btnRwow4").on("click", function(){
+        $(".unit1Premium, .unit2Premium, .unit3Premium, .unit4Premium, .unit1, .unit3, .unit2").hide();
+        $(".unit4").show();
+    });
+    
 
     function ready() {
         var removeCartItemButtons = document.getElementsByClassName('btn-danger')

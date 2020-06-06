@@ -10,6 +10,12 @@
 body{
     position: relative;
 }
+.italica{
+    font-style: italic;
+}
+.bold{
+    font-weight: bold;
+}
 .center{
     text-align: center;
 }
@@ -37,6 +43,9 @@ html, body {
 
 .content-section {
     margin: 1em;
+}
+.nxt1{
+    font-size: 1.5rem !important;
 }
 
 /* .container {
@@ -184,7 +193,10 @@ body {
     margin-left: 7%;
 }
 .desc1Exp{
-    margin-top: 12%;
+    margin-top: 0%;
+}
+.btnReMargin{
+    margin-top: 4%;
 }
 .estrellas{
     color: gold ;
@@ -212,10 +224,12 @@ body {
     color: #333;
     margin-bottom: 15px;
 }
-
+.verPremium3{
+    display: none !important;
+}
 
 .shop-item-image {
-    height: 250px;
+    height: 350px;
     border-radius: 8px;
 }
 
@@ -336,4 +350,9 @@ body {
     display: block;
     margin: 40px auto 80px auto;
     font-size: 1.75em;
+}
+@media (max-width: 1000px) {
+    .shop-item-image {
+        height: 30rem !important;
+    }
 }
