@@ -60,11 +60,15 @@ html, body {
     font-size: 2.5em;
 }
 .formdiv{
-    height: 950px;
+    height: 1280px;
     background-color: grey;
     margin-bottom: 5%;
     padding-top: 5%;
 }
+/* .theForm{
+    width: 60% !important;
+    margin-left: 50%;
+} */
 
 .main-footer {
     background-color: grey;
@@ -224,7 +228,7 @@ body {
     color: #333;
     margin-bottom: 15px;
 }
-.verPremium3{
+.verPremium3, .verPremium1, .verPremium2{
     display: none !important;
 }
 
@@ -351,6 +355,16 @@ body {
     margin: 40px auto 80px auto;
     font-size: 1.75em;
 }
+.sucessMessage{
+    height: 400px;
+}
+.sucessTitle{
+    margin-top: 20%;
+}
+.band-name{
+    color: white !important;
+}
+
 @media (max-width: 1000px) {
     .shop-item-image {
         height: 30rem !important;

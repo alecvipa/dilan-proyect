@@ -22,7 +22,7 @@ app.use(express.static('public'))
 
 
 
-app.get('/', function(req, res){
+app.get('/', function (req, res) {
   fs.readFile('items.json', function (error, data) {
     if (error) {
       res.status(500).end()
@@ -35,15 +35,12 @@ app.get('/', function(req, res){
   })
 })
 
-app.get('/store', function (req, res) {
+app.get('/sucess', function (req, res) {
   fs.readFile('items.json', function (error, data) {
     if (error) {
       res.status(500).end()
     } else {
-      res.render('store.ejs', {
-        stripePublicKey: stripePublicKey,
-        items: JSON.parse(data)
-      });
+      res.render('sucess.ejs');
     }
   });
 });
@@ -53,10 +50,7 @@ app.get('/privacy', function (req, res) {
     if (error) {
       res.status(500).end()
     } else {
-      res.render('privacy.ejs', {
-        stripePublicKey: stripePublicKey,
-        items: JSON.parse(data)
-      })
+      res.render('privacy.ejs');
     }
   })
 })
@@ -66,15 +60,19 @@ app.post('/purchase', function (req, res) {
     if (error) {
       res.status(500).end()
     } else {
-      const itemsJson = JSON.parse(data)
-      const itemsArray = itemsJson.experiencias;
+      console.log('purchase')
+      const itemsJson = JSON.parse(data);
+      const itemsArray = itemsJson.experiencias.concat(itemsJson.experienciaPremium);
       let total = 0
+      var body = req.body;
+      console.log(body);
+
       req.body.items.forEach(function (item) {
         const itemJson = itemsArray.find(function (i) {
           return i.id == item.id
-        })
+        });
         total = total + itemJson.price * item.quantity
-      })
+      });
 
       stripe.charges.create({
         amount: total,
@@ -82,20 +80,20 @@ app.post('/purchase', function (req, res) {
         currency: 'mxn'
       }).then(function () {
         console.log('Cargo exitoso')
-        res.json({ message: 'Artículos comprados exitosamente' })
+        res.json({ message: 'Artículos comprados exitosamente' });
       }).catch(function () {
         console.log('Cobro fallido')
         res.status(500).end()
-      })
-    }
-  })
-})
+      });
+    };
+  });
+});
 
 app.get("/api/:zips?", function (req, res) {
   var zipCodes = [
     {
-        name: "Códigos Postales Disponibles",
-        disponibles: ["55140","52930","52938"],
+      name: "Códigos Postales Disponibles",
+      disponibles: ["55140", "52930", "52938"],
     },
   ];
 
@@ -105,16 +103,16 @@ app.get("/api/:zips?", function (req, res) {
 
   if (chosen) {
 
-      for (var i = 0; i < zipCodes.length; i++) {
-          if (chosen === zipCodes[0].disponibles[0] || chosen === zipCodes[0].disponibles[1] || chosen === zipCodes[0].disponibles[2] ) {
-              return res.json(zipCodes[i]);
-          }
+    for (var i = 0; i < zipCodes.length; i++) {
+      if (chosen === zipCodes[0].disponibles[0] || chosen === zipCodes[0].disponibles[1] || chosen === zipCodes[0].disponibles[2]) {
+        return res.json(zipCodes[i]);
       }
+    }
 
-      return res.send("Código postal sin cobertura");
+    return res.send("Código postal sin cobertura");
   }
   else {
-      res.json(otherModels);
+    res.json(otherModels);
   }
 
 });
@@ -122,34 +120,34 @@ app.get("/api/:zips?", function (req, res) {
 
 app.post("/ajax/email", function (request, response) {
   const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      secure: false,
-      port: 25,
-      auth: {
-          user: email,
-          pass: superSecretPwd
-      },
-      tls: {
-          rejectUnauthorized: false
-      }
+    service: 'gmail',
+    secure: false,
+    port: 25,
+    auth: {
+      user: email,
+      pass: superSecretPwd
+    },
+    tls: {
+      rejectUnauthorized: false
+    }
   });
   console.log(request.body);
 
   var textBody = `FROM: ${request.body.name}; EMAIL: ${request.body.email}; NUMBER: ${request.body.number}; MESSAGE: ${request.body.message}; DATE: ${request.body.date}; HOUR:${request.body.hour}; CHECKBOX:${request.body.checkbox}`;
-  var htmlBody = `<h2>Solicitud de pedido</h2><p>Nombre: ${request.body.name}</p><p> Correo electrónico: <a href='mailto: ${request.body.email}'>${request.body.email}</a></p><p>Telefono de contacto: ${request.body.number}</p><p>Mensaje: ${request.body.message}</p><p>Día de entrega: ${request.body.date}</p><p>Hora de entrega: ${request.body.hour}</p><p>Quieren novedades: ${request.body.checkbox}</p><p>Pedido: ${request.body.pedido}</p>`;
+  var htmlBody = `<h2>Solicitud de pedido</h2><p>Nombre: ${request.body.name}</p><p> Correo electrónico: <a href='mailto: ${request.body.email}'>${request.body.email}</a></p><p>Telefono de contacto: ${request.body.number}</p><p>Dirección de entrega: ${request.body.message}</p><p>Día de entrega: ${request.body.date}</p><p>Hora de entrega: ${request.body.hour}</p><p>Quieren novedades: ${request.body.checkbox}</p><p>Pedido: ${request.body.pedido}</p><p>Es para regalo: ${request.body.giftCheckbox}</p><p>Mensaje de regalo: ${request.body.giftMessage}</p>`;
   var mail = {
-      from: '"Team: Dilan" <dilan@gmail.com>',
-  to: 'hebrit_626@hotmail.com',
-  subject: '¡Alguien te ha hecho un pedido!',
-  html:htmlBody
+    from: '"Team: thewowbox.mx" <contacto@thewowbox.mx>',
+    to: 'hebrit_626@hotmail.com',
+    subject: '¡Alguien te ha hecho un pedido!',
+    html: htmlBody
   };
-  transporter.sendMail(mail,function(err, info){
-      if (err) {
-          return console.log(err);
-      } else {
-          console.log("message sent!");
-          console.log(request.body);
-      };
+  transporter.sendMail(mail, function (err, info) {
+    if (err) {
+      return console.log(err);
+    } else {
+      console.log("message sent!");
+      console.log(request.body);
+    };
   });
 });
 

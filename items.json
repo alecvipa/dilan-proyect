@@ -3,51 +3,65 @@
     {
       "id": 1,
       "name": "Cata de vino",
-      "premiumName": "Cata de vino Premium",
       "price": 129900,
-      "premiumPrice": 189900,
       "description": "Sal de la rutina y disfruta de esta cata de vinos desde la comodidad de tu casa. Además de probar estas deliciosas opciones, te darás cuenta de que no necesitas ser experto para seleccionar platilos simples para acompañar y aprenderás algunos tips básicos en compañía de tu familia o amigos.",
+      "brief":"Descubre deliciosos matices y aprende como maridarlos en esta cata de vinos",
       "incluye": ["1 botella de vino blanco 750ml", "1 botella de vino tinto 750ml (varietal)", "1 botella de vino tinto Reserva 750ml","Charola de quesos", "Cata en video"],
-      "incluyePremium": ["1 botella de vino blanco 750ml", "2 botellas de vino tinto Reserva 750ml","Charola de quesos", "Cata en video"],
       "people":"4-5",
-      "premiumPeople":"4-5",
       "imgName": "Album1.png"
     },
     {
       "id": 2,
       "name": "Cata de cerveza artesanal",
-      "premiumName": "Cata de cerveza artesanal Premium",
-      "price": 89900,
-      "premiumPrice": 149900,
+      "price": 59900,
       "description": "A veces necesitamos una oportunidad para compartir tiempo juntos y disfrutar las pequeñas cosas de la vida. Prueba diferentes estilos de cerveza artesanal mexicana y conoce algunos tips básicos sobre esta deliciosa bebida.",
-      "incluye": ["12 cervezas de 3 estilos diferentes", "Selección de chocolates", "Cata en video"],
-      "incluyePremium": ["12 cervezas PREMIUM de 3 estilos diferentes", "Selección de chocolates", "Cata en video"],
-      "people":"4",
-      "premiumPeople":"4",
+      "brief":"Conoce matices inigualables que la malta otorga en esta cata de cervezas artesanales",
+      "incluye": ["6 cervezas de 3 estilos diferentes", "Selección de chocolates", "Cata en video"],
+      "people":"2",
       "imgName": "Album2.png"
     },
     {
       "id": 3,
       "name": "Noche de juegos",
-      "price": 149900,
+      "price": 89900,
       "description": "Asegúrate de que la próxima reunión en casa esté llena de diversión. Organiza una noche de juegos para pasar momentos agradables y conectar con los tuyos. Con esta wow box tienes todo lo que necesitas.",
-      "incluye": ["3 juegos de mesa", "1 kit de botanas", "1 manual de juegos", "8 cervezas"],
-      "incluyePremium": ["3 juegos de mesa", "1 kit de botanas", "1 manual de juegos", "8 cervezas"],
+      "brief":"Diviértete en compañía con juegos, botanas y la mejor actitud en esta noche de juegos",
+      "incluye": ["Juegos de mesa", "Tarjetas de juegos", "8 cervezas"],
       "people":"4",
       "imgName": "Album3.png"
     },
     {
       "id": 4,
       "name": "Hora de celebrar",
-      "premiumName": "Hora de celebrar Premium",
-      "price": 59900,
-      "premiumPrice": 139900,
+      "price": 49900,
       "description": "Si el aislamiento arruinó los planes para algún festejo, no todo está perdido. Sorpréndel@ con esta increíble experiencia personalizada. Celebrar en casa nunca fue tan especial y delicioso.",
-      "incluye": ["1 pastel básico hecho a base de panqué con betún y mensaje personalizado", "1 globo de helio grande personalizado", "Dulces y chocolates"],
-      "incluyePremium": ["1 pastel PREMIUM de: Vainilla con nutella, Vainilla con betún de queso, Chocolate con Nutella, Plátano con nutella o Zanahoria con betún de queso ", "1 globo de helio grande personalizado", "Dulces y chocolates", "Banner decorativo"],
+      "brief":"Vive un momento especial como tu prefieras con esta hora de celebrar",
+      "incluye": ["1 tarta de plátano con dulce de leche", "Caja de chocolates"],
       "people":"6",
-      "premiumPeople":"8",
       "imgName": "Album4.png"
     }
+  ],
+  "experienciaPremium": [
+    {
+      "id": 5,
+      "name": "Cata de cerveza artesanal Premium",
+      "price": 99900,
+      "description": "A veces necesitamos una oportunidad para compartir tiempo juntos y disfrutar las pequeñas cosas de la vida. Prueba diferentes estilos de cerveza artesanal mexicana y conoce algunos tips básicos sobre esta deliciosa bebida.",
+      "brief":"Conoce matices inigualables que la malta otorga en esta cata de cervezas artesanales",
+      "incluye": ["12 cervezas PREMIUM de 3 estilos diferentes", "Selección de chocolates", "Cata en video"],
+      "people":"4",
+      "imgName": "Album2.png"
+    },
+    {
+      "id": 6,
+      "name": "Hora de celebrar Premium",
+      "price": 89900,
+      "description": "Si el aislamiento arruinó los planes para algún festejo, no todo está perdido. Sorpréndel@ con esta increíble experiencia personalizada. Celebrar en casa nunca fue tan especial y delicioso.",
+      "brief":"Vive un momento especial como tu prefieras con esta hora de celebrar",
+      "incluye": ["1 pastel PREMIUM de: Vainilla con nutella, Vainilla con betún de queso, Chocolate con Nutella, Plátano con nutella o Zanahoria con betún de queso ", "Caja de chocolates"],
+      "people":"8",
+      "imgName": "Album4.png"
+    }
+    
   ]
 }

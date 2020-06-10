@@ -2,8 +2,8 @@
 <html>
 
 <head>
-    <title>Proyecto Dilan</title>
-    <meta name="description" content="This is the description">
+    <title>Experiencias Wow Box</title>
+    <meta name="description" content="Si el aislamiento arruinó los planes, no todo está perdido. thewowbox.mx tiene las mejores experiencias en casa.">
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
@@ -48,9 +48,10 @@
             };
             obj.open("post", form.action, true);
             obj.setRequestHeader("Content-Type", "application/json"); // NOTICE: "application/json"
-            obj.send(JSON.stringify({ name: form.name.value, number: form.tel.value, email: form.email.value, message: form.message.value, date: form.date.value, hour: form.hour.value, checkbox: form.checkbox.value, pedido: [form.title.value, "cantidad: " + form.quantity.value] }));
+            obj.send(JSON.stringify({ name: form.name.value, number: form.tel.value, email: form.email.value, message: form.message.value, date: form.date.value, hour: form.hour.value, checkbox: form.checkbox.value, giftCheckbox: form.giftCheckbox.value, giftMessage: form.giftMessage.value , pedido: form.cartBrief.value }));
             $('form').trigger("reset");
-            alert("¡Obtuvimos tus datos exitosamente!")
+            alert("¡Obtuvimos tus datos exitosamente!");
+            window.location.href = "/sucess";
             return false;
 
         }
@@ -92,28 +93,43 @@
         <div class="row">
             <section class="container content-section" id="experienciasCards">
                 <div class="badgeWow">
-                    <h2 class="section-header">ELIGE UNA <span class="italica">WOW BOX</span></h2>
+                    <h2 class="section-header">ELIGE UNA <span class="italica">EXPERIENCIA</span></h2>
                 </div>
                 <br>
-                <div class="shop-items col">
+                <div class="shop-items col text-center">
                     <% items.experiencias.forEach(function(item){ %>
                     <div class="shop-item" data-item-id="<%= item.id %>">
-                        <span class="shop-item-title"><%= item.name %></span>
                         <img class="shop-item-image" src="Images/<%= item.imgName %>">
                         <div class="shop-item-details">
-                            <div class="col-4">
+                            <!-- <div class="col-4">
                                 <span class="shop-item-price">$<%= item.price / 100 %></span>
                             </div>
                             <div class="col-8 text-right">
                                 <span class="shop-item-price"> Personas: <%=item.people%></span>
-                            </div>
+                            </div> -->
 
                         </div>
-                        <div class="moreDetails container text-center ">
-                            <button class="btn btn-light" id="detail<%= item.id %>" type="button"><i class="fas fa-eye"
+                        <div class="moreDetails container text-left ">
+                            <span class="shop-item-title text-left"><%= item.name %></span>
+                            <h4><span class="badge badge-secondary verPremium<%= item.id %>"
+                                    style="background-color: goldenrod; " onclick="unit<%= item.id %>Premiums()"><i
+                                        class="fas fa-gift"
+                                        style="color: gold; padding-top: 3%; padding-bottom: 3%;"></i> Ver Premium
+                                    Box</span>
+                                <!-- <button class="btn btn-light" id="detail<%= item.id %>" type="button"><i class="fas fa-eye"
                                     style="color: lightsteelblue;" onclick="location.href='#wowBoxes';"></i>
-                                DETALLES</button>
-                            <button class="btn btn-primary shop-item-button" type="button">AGREGAR</button>
+                                DETALLES</button> -->
+                                <!-- <button class="btn btn-primary shop-item-button" type="button">AGREGAR</button> -->
+                                <span class="badge badge-secondary bg-primary" onclick="unit<%= item.id %>Wow()"
+                                    style="padding-top: 2.5% !important; padding-bottom: 2.5% !important;"><i
+                                        class="fas fa-gift" style="color: skyblue;"></i> Ver Wow Box</span></h4>
+                            <div class="text-left">
+                                <br>
+                                <p style="width: 21rem; font-size: 15px;"><%=item.brief%> <br> <br> Desde
+                                    $<%=item.price/100%> y entregado en
+                                    la puerta de tu casa
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <% }) %>
@@ -130,9 +146,9 @@
                     <div class="row">
                         <div class="col-sm-4 col-md-6">
                             <div class="imgPre" style="background-image: url(Images/<%=item.imgName%>);">
-                                <!-- <div class="shop-item" data-item-id="<%= item.id %>">
-                                    <img class="shop-item-image" id="imgNameItem" src="Images/<%= item.imgName %>">
-                                </div> -->
+                                <div class="shop-item" data-item-id="<%= item.id %>">
+                                    <!-- <img class="shop-item-image" id="imgNameItem" src="Images/<%= item.imgName %>"> -->
+                                </div>
                             </div>
                             <div class="carrosuel">
                                 <img src="Images/Album1.png"
@@ -146,6 +162,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
+                            <h1>Compra tu Wow Box!</h1>
                             <h3>
                                 <br><span class="badge badge-secondary verPremium<%= item.id %>"
                                     style="background-color: goldenrod; " onclick="unit<%= item.id %>Premiums()"><i
@@ -159,6 +176,7 @@
                                 <div class="shop-item" data-item-id="<%= item.id %>">
                                     <img class="shop-item-image" id="" src="Images/<%= item.imgName %>"
                                         style="display: none;">
+                                    <div class="shop-item-id" style="display: none;"><%= item.id %></div>
                                     <!-- <div class="shop-item-details row">
                                         <div class="col-6">
 
@@ -283,14 +301,14 @@
                 <% }) %>
             </section>
             <section class="container">
-                <% items.experiencias.forEach(function(item){ %>
+                <% items.experienciaPremium.forEach(function(item){ %>
                 <div class="unit<%= item.id %>Premium">
                     <div class="row">
                         <div class="col-sm-4 col-md-6">
                             <div class="imgPre" style="background-image: url(Images/<%=item.imgName%>);">
-                                <!-- <div class="shop-item" data-item-id="<%= item.id %>">
-                                    <img class="shop-item-image" id="imgNameItem" src="Images/<%= item.imgName %>">
-                                </div> -->
+                                <div class="shop-item" data-item-id="<%= item.id %>">
+                                    <!-- <img class="shop-item-image" id="imgNameItem" src="Images/<%= item.imgName %>"> -->
+                                </div>
                             </div>
                             <div class="carrosuel">
                                 <img src="Images/Album1.png"
@@ -304,11 +322,12 @@
                             </div>
                         </div>
                         <div class="col-md-6">
+                            <h1>Compra tu Premium Box!</h1>
                             <h3>
-                                <br><span class="badge badge-secondary bg-primary" onclick="unit<%= item.id %>Wow()"><i class="fas fa-gift"
-                                        style="color: skyblue;"></i> Ver Wow Box</span>
+                                <br><span class="badge badge-secondary bg-primary" onclick="unit<%= item.id %>Wow()"><i
+                                        class="fas fa-gift" style="color: skyblue;"></i> Ver Wow Box</span>
                                 <br>
-                                <button class="btn btn-light btnReMargin btnRwow<%= item.id %>" type="button"><i
+                                <button class="btn btn-light btnRegresar btnReMargin" type="button"><i
                                         class="fas fa-undo"></i>
                                     ATRÁS</button>
                             </h3>
@@ -316,6 +335,7 @@
                                 <div class="shop-item" data-item-id="<%= item.id %>">
                                     <img class="shop-item-image" id="" src="Images/<%= item.imgName %>"
                                         style="display: none;">
+                                    <div class="shop-item-id" style="display: none;"><%= item.id %></div>
                                     <!-- <div class="shop-item-details row">
                                         <div class="col-6">
 
@@ -325,8 +345,8 @@
                                         </div>
                                     </div> -->
                                 </div>
-                                <h4><span class="shop-item-title title2"><%=item.premiumName%></span></h4>
-                                <h5><span class="shop-item-price">$<%= item.premiumPrice / 100 %></span></h5>
+                                <h4><span class="shop-item-title title2"><%= item.name %></span></h4>
+                                <h5><span class="shop-item-price">$<%= item.price / 100 %></span></h5>
                                 <h7 style="color: grey;">Impuesto y envío incluídos</h7>
                                 <div class="estrellas">
                                     <i class="fas fa-star estrella"></i><i class="fas fa-star estrella"></i><i
@@ -344,22 +364,19 @@
                             <div class="desc1Exp2 container">
                                 <h4>Descripción</h4>
                                 <p style="color: grey;"><%= item.description%></p>
-                                <div class="people">
-                                    <h5>Experiencia para: <%=item.premiumPeople%> personas</h5>
-                                </div>
                             </div>
                             <div class="desc1Exp2 container">
                                 <h4>Incluye:</h4>
                                 <p style="color: grey;">
-                                    <%= item.incluyePremium[0]%>
+                                    <%= item.incluye[0]%>
                                     <br>
-                                    <%= item.incluyePremium[1]%>
+                                    <%= item.incluye[1]%>
                                     <br>
-                                    <%= item.incluyePremium[2]%>
+                                    <%= item.incluye[2]%>
                                     <br>
-                                    <%= item.incluyePremium[3]%>
+                                    <%= item.incluye[3]%>
                                     <br>
-                                    <%= item.incluyePremium[4]%>
+                                    <%= item.incluye[4]%>
                                 </p>
                             </div>
                             <div class="desc1Exp2 container">
@@ -482,13 +499,13 @@
     <section class="formdiv">
         <div class="formularioContacto container">
             <div class="row">
-                <div class="col-md">
+                <!-- <div class="col-md">
                     <section class="subtitleContact">
                         <h3 class="formTitle1">¡Casi terminamos!</h3>
                         <br>
                         <h5 class="formTitle2">—Compartenos tu información—</h5>
                     </section>
-                </div>
+                </div> -->
                 <div class="col-md">
                     <section class="card theForm">
                         <h5 class="card-header contactHeader">Detalles de la entrega</h5>
@@ -518,8 +535,20 @@
                                     <textarea class="form-control" name="message" id="exampleFormControlTextarea1"
                                         rows="3"></textarea>
                                 </section>
-                                <div class="cart-items" name="products">
-                                </div>
+                                <!-- <div class="cart-items" name="products">
+                                </div> -->
+                                <section class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="giftCheckbox">
+                                    <label class="form-check-label submitFormBtn" for="exampleCheck1">¿Es un regalo para
+                                        alguien más?</label>
+                                </section>
+                                <br>
+                                <section class="form-group">
+                                    <label for="exampleFormControlTextarea2">En caso de ser un regalo, escríbele un
+                                        mensaje personalizado</label>
+                                    <textarea class="form-control" name="giftMessage" id="exampleFormControlTextarea1"
+                                        rows="3"></textarea>
+                                </section>
                                 <section>
                                     <div class="form-group">
                                         <!-- Date input -->
@@ -535,10 +564,15 @@
                                         <option>10:00-14:00h</option>
                                     </select>
                                 </div>
+                                <section class="form-group">
+                                    <label for="resumenDeCompra">Resúmen de Compra</label>
+                                    <textarea class="form-control" name="cartBrief" id="cartBrief"
+                                        rows="3" readonly></textarea>
+                                </section>
                                 <section class="form-check">
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1" name="checkbox">
                                     <label class="form-check-label submitFormBtn" for="exampleCheck1">Sí, me gustaría
-                                        recibir novedades de Dilan</label>
+                                        recibir novedades de <span><a href="/">thewowbox.mx</a></span></label>
                                 </section>
                                 <br>
                                 <button type="submit" class="btn btn-primary btn-lg submitFormBtn">Enviar</button>
@@ -567,19 +601,19 @@
             </div>
             <button class="btn btn-primary btn-purchase" type="button">COMPRAR</button>
         </div>
-        <!-- <div class="cart-row">
+        <div class="cart-row">
             <span class="cart-item cart-header cart-column">EXPERIENCIA</span>
             <span class="cart-price cart-header cart-column">PRECIO</span>
             <span class="cart-quantity cart-header cart-column">CANTIDAD</span>
         </div>
         <div class="cart-items">
-        </div> -->
+        </div>
 
     </section>
 
     <footer class="main-footer">
         <div class="container main-footer-container">
-            <h3 class="band-name">Proyecto Dilan</h3>
+            <h3><a href="/" class="band-name">thewowbox.mx</a></h3>
             <ul class="nav footer-nav">
                 <li>
                     <a href="https://www.youtube.com" target="_blank">
@@ -608,30 +642,56 @@
     <script src="/assets/js/jqueryCounterupMin.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
     <script type="text/javascript">
-        function unit1Premiums() {
-            $(".unit1, .unit2, .unit3, .unit4, .unit2Premium, .unit4Premium").hide();
-            $(".unit1Premium").show();
-        };
+
         function unit2Premiums() {
-            $(".unit1, .unit2, .unit3, .unit4, .unit1Premium, .unit4Premium ").hide();
-            $(".unit2Premium").show();
+            $(".unit1, .unit2, .unit3, .unit4, .unit6Premium, #experienciasCards").hide();
+            $(".unit5Premium").show();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
         };
         function unit4Premiums() {
-            $(".unit1, .unit2, .unit3, .unit4, .unit1Premium, .unit2Premium").hide();
-            $(".unit4Premium").show();
+            $(".unit1, .unit2, .unit3, .unit4, .unit5Premium, #experienciasCards").hide();
+            $(".unit6Premium").show();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
         };
         function unit1Wow() {
-            $(".unit1Premium, .unit2, .unit3, .unit4, .unit2Premium, .unit4Premium").hide();
+            $(".unit5Premium, .unit2, .unit3, .unit4, .unit6Premium, #experienciasCards").hide();
             $(".unit1").show();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
         };
         function unit2Wow() {
-            $(".unit1, .unit2Premium, .unit3, .unit4, .unit1Premium, .unit4Premium ").hide();
+            $(".unit1, .unit2Premium, .unit3, .unit4, .unit5Premium, .unit6Premium, #experienciasCards ").hide();
             $(".unit2").show();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
         };
         function unit4Wow() {
-            $(".unit1, .unit2, .unit3, .unit4Premium, .unit1Premium, .unit2Premium").hide();
+            $(".unit1, .unit2, .unit3, .unit5Premium, .unit6Premium, #experienciasCards").hide();
             $(".unit4").show();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
         };
+        function unit3Wow() {
+            $(".unit1, .unit2, .unit4, .unit5Premium, .unit6Premium, #experienciasCards").hide();
+            $(".unit3").show();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        };
+        function unit5Wow() {
+            $(".unit1, .unit5Premium,.unit6Premium, .unit3, .unit4, #experienciasCards ").hide();
+            $(".unit2").show();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        };
+        function unit6Wow() {
+            $(".unit1, .unit6Premium, .unit5Premium, .unit3, .unit2, #experienciasCards ").hide();
+            $(".unit4").show();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        };
+
 
         $("#descubrirbtn").on("click", function (event) {
 
@@ -646,22 +706,26 @@
                 if (data === "Código postal sin cobertura") {
                     $(".zipAlert").hide();
                     $(".zipAlert2").toggle('slow');
-                    $(".formdiv").show();
-                    $('.submitFormBtn').prop('disabled', true);
+                    $(".purchDiv").show();
+                    $(".btn-purchase").prop('disabled', true);
+                    // $(".formdiv").show();
+                    // $('.submitFormBtn').prop('disabled', true);
 
                 } else if (data) {
                     $(".zipAlert").toggle('slow');
                     $(".zipAlert2").hide();
-                    $(".formdiv").show();
-                    $('.submitFormBtn').prop('disabled', false);
+                    $(".purchDiv").show();
+                    $(".formdiv").hide();
+                    $(".btn-purchase").prop('disabled', false);
+                    // $('.submitFormBtn').prop('disabled', false);
 
                 }
             });
         });
 
-        $(".submitFormBtn").on("click", function (event) {
-            $(".purchDiv").show();
-        });
+        // $(".submitFormBtn").on("click", function (event) {
+        //     $(".purchDiv").show();
+        // });
 
     </script>
 </body>

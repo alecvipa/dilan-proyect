@@ -46,72 +46,86 @@ $(document).ready(function () {
         $('.imgPre').css("background-image", "url(Images/Album3.png)");
     });
     // FUNCION PARA BOTONES DE DETALLES
-    $("#detail1").on("click", function () {
-        $(".unit1").show();
-        $(".unit2, .unit3, .unit4, .unit5, .unit6, #experienciasCards").hide();
-        $("html, body").animate({ scrollTop: 0 }, "slow");
-        return false;
+    // $("#detail1").on("click", function () {
+    //     $(".unit1").show();
+    //     $(".unit2, .unit3, .unit4, .unit5, .unit6, #experienciasCards").hide();
+    //     $("html, body").animate({ scrollTop: 0 }, "slow");
+    //     return false;
 
-    });
-    $("#detail2").on("click", function () {
-        $(".unit2").show();
-        $(".unit1, .unit3, .unit4, .unit5, .unit6, #experienciasCards").hide();
-        $("html, body").animate({ scrollTop: 0 }, "slow");
-        return false;
-    });
-    $("#detail3").on("click", function () {
-        $(".unit3").show();
-        $(".unit1, .unit2, .unit4, .unit5, .unit6, #experienciasCards").hide();
-        $("html, body").animate({ scrollTop: 0 }, "slow");
-        return false;
-    });
-    $("#detail4").on("click", function () {
-        $(".unit4").show();
-        $(".unit1, .unit2, .unit3, .unit5, .unit6, #experienciasCards").hide();
-        $("html, body").animate({ scrollTop: 0 }, "slow");
-        return false;
-    });
-    $("#detail5").on("click", function () {
-        $(".unit5").show();
-        $(".unit1, .unit2, .unit3, .unit4, .unit6, #experienciasCards").hide();
-        $("html, body").animate({ scrollTop: 0 }, "slow");
-        return false;
-    });
-    $("#detail6").on("click", function () {
-        $(".unit6").show();
-        $(".unit1, .unit2, .unit3, .unit4, .unit5, #experienciasCards").hide();
-        $("html, body").animate({ scrollTop: 0 }, "slow");
-        return false;
-    });
+    // });
+    // $("#detail2").on("click", function () {
+    //     $(".unit2").show();
+    //     $(".unit1, .unit3, .unit4, .unit5, .unit6, #experienciasCards").hide();
+    //     $("html, body").animate({ scrollTop: 0 }, "slow");
+    //     return false;
+    // });
+    // $("#detail3").on("click", function () {
+    //     $(".unit3").show();
+    //     $(".unit1, .unit2, .unit4, .unit5, .unit6, #experienciasCards").hide();
+    //     $("html, body").animate({ scrollTop: 0 }, "slow");
+    //     return false;
+    // });
+    // $("#detail4").on("click", function () {
+    //     $(".unit4").show();
+    //     $(".unit1, .unit2, .unit3, .unit5, .unit6, #experienciasCards").hide();
+    //     $("html, body").animate({ scrollTop: 0 }, "slow");
+    //     return false;
+    // });
+    // $("#detail5").on("click", function () {
+    //     $(".unit5").show();
+    //     $(".unit1, .unit2, .unit3, .unit4, .unit6, #experienciasCards").hide();
+    //     $("html, body").animate({ scrollTop: 0 }, "slow");
+    //     return false;
+    // });
+    // $("#detail6").on("click", function () {
+    //     $(".unit6").show();
+    //     $(".unit1, .unit2, .unit3, .unit4, .unit5, #experienciasCards").hide();
+    //     $("html, body").animate({ scrollTop: 0 }, "slow");
+    //     return false;
+    // });
     $(".btnRegresar").on("click", function () {
         $("#experienciasCards").show();
-        $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6, .zipCodeBrowser, .zipAlert, .zipAlert2, .formdiv, .purchDiv,.unit1Premium, .unit2Premium, .unit3Premium, .unit4Premium").hide();
+        $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6, .zipCodeBrowser, .zipAlert, .zipAlert2, .formdiv, .purchDiv, .unit5Premium, .unit6Premium").hide();
     });
+    // Función para on click purchase button, mostrar el div de detalles de compra
+    $(".btn-purchase").on("click", function (){
+        $(".formdiv").show();
+        $(".purchDiv").hide();
+        var cookieValue = [$("input[type=hidden][name=title1]").val(), $("input[type=number][name=quantity1]").val(),$("input[type=hidden][name=title2]").val(),$("input[type=number][name=quantity2]").val(),$("input[type=hidden][name=title3]").val(),$("input[type=number][name=quantity3]").val(),$("input[type=hidden][name=title4]").val(),$("input[type=number][name=quantity4]").val(),$("input[type=hidden][name=title5]").val(),$("input[type=number][name=quantity5]").val(),$("input[type=hidden][name=title6]").val(),$("input[type=number][name=quantity6]").val()];
+        var cookie2 = [];
+        if(cookieValue[0]){
+            cookie2.push("Experiencia: "+[cookieValue[0]," Cantidad: "+cookieValue[1]]);
+        }
+        if(cookieValue[2]){
+            cookie2.push("Experiencia: "+[cookieValue[2]," Cantidad: "+cookieValue[3]]);
+        }
+        if(cookieValue[4]){
+            cookie2.push("Experiencia: "+[cookieValue[4]," Cantidad: "+cookieValue[5]]);
+        }
+        if(cookieValue[6]){
+            cookie2.push("Experiencia: "+[cookieValue[6]," Cantidad: "+cookieValue[7]]);
+        }
+        if(cookieValue[8]){
+            cookie2.push("Experiencia: "+[cookieValue[8]," Cantidad: "+cookieValue[9]]);
+        }
+        if(cookieValue[10]){
+            cookie2.push("Experiencia: "+[cookieValue[10]," Cantidad: "+cookieValue[11]]);
+        }
+        
+        document.getElementById("cartBrief").value = cookie2;
 
+    }) 
     // Función para pasar a Zip Code Validation
 
     $(".nxt1").on("click", function () {
         $("#experienciasCards").hide();
-        $(".unit1, .unit2, .unit3, .unit4, .unit1Premium, .unit2Premium, .unit3Premium, .unit4Premium").hide();
+        $(".unit1, .unit2, .unit3, .unit4, .unit5Premium, .unit6Premium").hide();
         $(".zipCodeBrowser").show(1000)
 
     });
 
     // Función para ver premium box
-    $(".unit1Premium, .unit2Premium, .unit3Premium, .unit4Premium").hide();
-
-    $(".btnRwow1").on("click", function(){
-        $(".unit1Premium, .unit2Premium, .unit3Premium, .unit4Premium, .unit2, .unit3, .unit4").hide();
-        $(".unit1").show();
-    });
-    $(".btnRwow2").on("click", function(){
-        $(".unit1Premium, .unit2Premium, .unit3Premium, .unit4Premium, .unit1, .unit3, .unit4").hide();
-        $(".unit2").show();
-    });
-    $(".btnRwow4").on("click", function(){
-        $(".unit1Premium, .unit2Premium, .unit3Premium, .unit4Premium, .unit1, .unit3, .unit2").hide();
-        $(".unit4").show();
-    });
+    $(".unit5Premium, .unit6Premium").hide();
     
 
     function ready() {
@@ -148,6 +162,7 @@ $(document).ready(function () {
                 var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
                 var quantity = quantityElement.value
                 var id = cartRow.dataset.itemId
+                // console.log(cartRow);
                 items.push({
                     id: id,
                     quantity: quantity
@@ -207,7 +222,7 @@ $(document).ready(function () {
         var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
         var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
         var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
-        var id = shopItem.dataset.itemId
+        var id = shopItem.getElementsByClassName('shop-item-id')[0].innerText
         addItemToCart(title, price, imageSrc, id)
         updateCartTotal()
     }
@@ -230,12 +245,12 @@ $(document).ready(function () {
         var cartRowContents = `
         <div class="cart-item cart-column">
             <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
-            <input type="hidden" value="${title}" name="title">
+            <input type="hidden" value="${title}" name="title${id}">
             <span class="cart-item-title" >${title}</span>
         </div>
         <span class="cart-price cart-column" name="price">${price}</span>
         <div class="cart-quantity cart-column">
-            <input class="cart-quantity-input" type="number" value="1" name="quantity">
+            <input class="cart-quantity-input" type="number" value="1" name="quantity${id}">
             <button class="btn btn-danger" type="button">ELIMINAR</button>
         </div>`
         cartRow.innerHTML = cartRowContents;
