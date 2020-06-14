@@ -4,6 +4,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 const stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
+const payPalId = process.env.payPalId;
 const email = process.env.email;
 const superSecretPwd = process.env.superSecretPwd;
 
@@ -22,7 +23,7 @@ app.use(express.static('public'))
 
 
 
-app.get('/', function (req, res) {
+app.get('/dev', function (req, res) {
   fs.readFile('items.json', function (error, data) {
     if (error) {
       res.status(500).end()
@@ -33,14 +34,30 @@ app.get('/', function (req, res) {
       });
     }
   })
-})
+});
+
+app.get('/', function (req, res) {
+  fs.readFile('items.json', function (error, data) {
+    if (error) {
+      res.status(500).end()
+    } else {
+      res.render('construction.ejs', {
+        stripePublicKey: stripePublicKey,
+        items: JSON.parse(data)
+      });
+    }
+  })
+});
 
 app.get('/sucess', function (req, res) {
   fs.readFile('items.json', function (error, data) {
     if (error) {
       res.status(500).end()
     } else {
-      res.render('sucess.ejs');
+      res.render('sucess.ejs', {
+        payPalId: payPalId,
+        items: JSON.parse(data)
+      });
     }
   });
 });

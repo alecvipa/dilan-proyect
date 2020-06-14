@@ -6,83 +6,55 @@ $(document).ready(function () {
         ready()
     }
     $(".zipAlert, .zipAlert2, .formdiv, .purchDiv, .zipCodeBrowser").hide();
-    $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6").hide();
+    $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6, .verPropuesta1, .verPropuesta3, .verPropuesta4, .verPropuesta5, .verPropuesta6, .verProp1, .verProp, .verProp3, .verProp4, .verProp6, .btnPre5").hide();
 
     // Función para botones de imágen
     $(".btn1first").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/Album1.png)");
+        $('.imgPre').css("background-image", "url(Images/cVinosDos.jpg)");
     });
     $(".btn1second").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/Album2.png)");
+        $('.imgPre').css("background-image", "url(Images/cVinosTres.jpg)");
     });
     $(".btn1third").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/Album3.png)");
+        $('.imgPre').css("background-image", "url(Images/cVinosCuatro.jpg)");
     });
     $(".btn2first").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/Album1.png)");
+        $('.imgPre').css("background-image", "url(Images/cCervezaDos.jpg)");
     });
     $(".btn2second").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/Album2.png)");
+        $('.imgPre').css("background-image", "url(Images/cCervezaTres.jpg)");
     });
     $(".btn2third").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/Album3.png)");
+        $('.imgPre').css("background-image", "url(Images/cCervezaCuatro.jpg)");
     });
     $(".btn3first").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/Album1.png)");
+        $('.imgPre').css("background-image", "url(Images/nJuegosDos.jpg)");
     });
     $(".btn3second").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/Album2.png)");
+        $('.imgPre').css("background-image", "url(Images/nJuegosTres.jpg)");
     });
     $(".btn3third").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/Album3.png)");
+        $('.imgPre').css("background-image", "url(Images/nJuegosCuatro.jpg)");
     });
     $(".btn4first").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/Album1.png)");
+        $('.imgPre').css("background-image", "url(Images/hCelebrarUno.jpg)");
     });
     $(".btn4second").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/Album2.png)");
+        $('.imgPre').css("background-image", "url(Images/hCelebrarDos.jpg)");
     });
     $(".btn4third").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/Album3.png)");
+        $('.imgPre').css("background-image", "url(Images/hCelebrarTres.jpg)");
     });
-    // FUNCION PARA BOTONES DE DETALLES
-    // $("#detail1").on("click", function () {
-    //     $(".unit1").show();
-    //     $(".unit2, .unit3, .unit4, .unit5, .unit6, #experienciasCards").hide();
-    //     $("html, body").animate({ scrollTop: 0 }, "slow");
-    //     return false;
-
-    // });
-    // $("#detail2").on("click", function () {
-    //     $(".unit2").show();
-    //     $(".unit1, .unit3, .unit4, .unit5, .unit6, #experienciasCards").hide();
-    //     $("html, body").animate({ scrollTop: 0 }, "slow");
-    //     return false;
-    // });
-    // $("#detail3").on("click", function () {
-    //     $(".unit3").show();
-    //     $(".unit1, .unit2, .unit4, .unit5, .unit6, #experienciasCards").hide();
-    //     $("html, body").animate({ scrollTop: 0 }, "slow");
-    //     return false;
-    // });
-    // $("#detail4").on("click", function () {
-    //     $(".unit4").show();
-    //     $(".unit1, .unit2, .unit3, .unit5, .unit6, #experienciasCards").hide();
-    //     $("html, body").animate({ scrollTop: 0 }, "slow");
-    //     return false;
-    // });
-    // $("#detail5").on("click", function () {
-    //     $(".unit5").show();
-    //     $(".unit1, .unit2, .unit3, .unit4, .unit6, #experienciasCards").hide();
-    //     $("html, body").animate({ scrollTop: 0 }, "slow");
-    //     return false;
-    // });
-    // $("#detail6").on("click", function () {
-    //     $(".unit6").show();
-    //     $(".unit1, .unit2, .unit3, .unit4, .unit5, #experienciasCards").hide();
-    //     $("html, body").animate({ scrollTop: 0 }, "slow");
-    //     return false;
-    // });
+    $(".btn6first").on("click", function () {
+        $('.imgPre').css("background-image", "url(Images/hCelebrarUno.jpg)");
+    });
+    $(".btn6second").on("click", function () {
+        $('.imgPre').css("background-image", "url(Images/hCelebrarDos.jpg)");
+    });
+    $(".btn6third").on("click", function () {
+        $('.imgPre').css("background-image", "url(Images/hCelebrarTres.jpg)");
+    });
+    
     $(".btnRegresar").on("click", function () {
         $("#experienciasCards").show();
         $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6, .zipCodeBrowser, .zipAlert, .zipAlert2, .formdiv, .purchDiv, .unit5Premium, .unit6Premium").hide();
@@ -259,6 +231,7 @@ $(document).ready(function () {
         cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged);
 
     }
+    
 
     function updateCartTotal() {
         var cartItemContainer = document.getElementsByClassName('cart-items')[0]

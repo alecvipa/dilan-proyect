@@ -3,7 +3,11 @@
 
 <head>
     <title>Experiencias Wow Box</title>
-    <meta name="description" content="Si el aislamiento arruinó los planes, no todo está perdido. thewowbox.mx tiene las mejores experiencias en casa.">
+    <meta name="description"
+        content="Si el aislamiento arruinó los planes, no todo está perdido. thewowbox.mx tiene las mejores experiencias en casa.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Ensures optimal rendering on mobile devices. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
@@ -48,7 +52,7 @@
             };
             obj.open("post", form.action, true);
             obj.setRequestHeader("Content-Type", "application/json"); // NOTICE: "application/json"
-            obj.send(JSON.stringify({ name: form.name.value, number: form.tel.value, email: form.email.value, message: form.message.value, date: form.date.value, hour: form.hour.value, checkbox: form.checkbox.value, giftCheckbox: form.giftCheckbox.value, giftMessage: form.giftMessage.value , pedido: form.cartBrief.value }));
+            obj.send(JSON.stringify({ name: form.name.value, number: form.tel.value, email: form.email.value, message: form.message.value, date: form.date.value, hour: form.hour.value, checkbox: form.checkbox.value, giftCheckbox: form.giftCheckbox.value, giftMessage: form.giftMessage.value, pedido: form.cartBrief.value }));
             $('form').trigger("reset");
             alert("¡Obtuvimos tus datos exitosamente!");
             window.location.href = "/sucess";
@@ -64,6 +68,8 @@
 </head>
 
 <body data-spy='scroll' data-target="#selector" data-offset='50'>
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AZAyj2LCfsSLwmRIKeG3Tlojpn-4sZcreAnWaEniF6JNkgE4tAIOjunZCUnVrW0Iu8pwNxLUP7cannP4&currency=MXN"></script>
     <div class="contactohead" id="wowBoxes">
         <div class="bg-dark center preFooter">
             <div class="container-fluid">
@@ -86,7 +92,6 @@
     </div>
 
     <div class="bannerTemporada">
-        <h1 style="color: white;">soy un banner de bannerTemporada</h1>
     </div>
 
     <div class="masterDiv container" id="selector">
@@ -151,13 +156,13 @@
                                 </div>
                             </div>
                             <div class="carrosuel">
-                                <img src="Images/Album1.png"
+                                <img src="Images/<%=item.imgName2%>"
                                     class="rounded float-left imgCarrousel btn<%= item.id %>first" alt="img"
                                     style="max-width: 100px; margin-left: 15%;" id="carr1">
-                                <img src="Images/Album2.png"
+                                <img src="Images/<%=item.imgName3%>"
                                     class="rounded float-left imgCarrousel btn<%= item.id %>second" alt="img"
                                     id="carr2">
-                                <img src="Images/Album3.png"
+                                <img src="Images/<%=item.imgName4%>"
                                     class="rounded float-left imgCarrousel btn<%= item.id %>third" alt="img" id="carr3">
                             </div>
                         </div>
@@ -167,6 +172,10 @@
                                 <br><span class="badge badge-secondary verPremium<%= item.id %>"
                                     style="background-color: goldenrod; " onclick="unit<%= item.id %>Premiums()"><i
                                         class="fas fa-gift" style="color: gold;"></i> Ver Premium Box</span>
+                                <br>
+                                <span class="badge badge-secondary verPropuesta<%= item.id %>"
+                                    style="background-color: goldenrod; " onclick="unit<%= item.id %>Propuesta()"><i
+                                        class="fas fa-users"></i> Ver para 4 personas</span>
                                 <br>
                                 <button class="btn btn-light btnRegresar btnReMargin" type="button"><i
                                         class="fas fa-undo"></i>
@@ -204,7 +213,10 @@
                             </div>
                             <div class="desc1Exp2 container">
                                 <h4>Descripción</h4>
-                                <p style="color: grey;"><%= item.description%></p>
+                                <p style="color: grey;"><%= item.description%> <br> <br> Experiencia para:
+                                    <%=item.people%> personas</p>
+
+
                             </div>
                             <div class="desc1Exp2 container">
                                 <h4>Incluye:</h4>
@@ -311,21 +323,26 @@
                                 </div>
                             </div>
                             <div class="carrosuel">
-                                <img src="Images/Album1.png"
+                                <img src="Images/<%=item.imgName2%>"
                                     class="rounded float-left imgCarrousel btn<%= item.id %>first" alt="img"
                                     style="max-width: 100px; margin-left: 15%;" id="carr1">
-                                <img src="Images/Album2.png"
+                                <img src="Images/<%=item.imgName3%>"
                                     class="rounded float-left imgCarrousel btn<%= item.id %>second" alt="img"
                                     id="carr2">
-                                <img src="Images/Album3.png"
+                                <img src="Images/<%=item.imgName4%>"
                                     class="rounded float-left imgCarrousel btn<%= item.id %>third" alt="img" id="carr3">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <h1>Compra tu Premium Box!</h1>
                             <h3>
-                                <br><span class="badge badge-secondary bg-primary" onclick="unit<%= item.id %>Wow()"><i
-                                        class="fas fa-gift" style="color: skyblue;"></i> Ver Wow Box</span>
+                                <br><span class="badge badge-secondary bg-primary btnPre<%= item.id %>"
+                                    onclick="unit<%= item.id %>Wow()"><i class="fas fa-gift"
+                                        style="color: skyblue;"></i> Ver Wow Box</span>
+                                <br>
+                                <span class="badge badge-secondary verProp<%= item.id %>"
+                                    style="background-color: goldenrod; " onclick="unit<%= item.id %>Propuesta()"><i
+                                        class="fas fa-user-friends"></i> Ver para 2 personas</span>
                                 <br>
                                 <button class="btn btn-light btnRegresar btnReMargin" type="button"><i
                                         class="fas fa-undo"></i>
@@ -363,7 +380,8 @@
                             </div>
                             <div class="desc1Exp2 container">
                                 <h4>Descripción</h4>
-                                <p style="color: grey;"><%= item.description%></p>
+                                <p style="color: grey;"><%= item.description%> <br> <br> Experiencia para:
+                                    <%=item.people%> personas</p>
                             </div>
                             <div class="desc1Exp2 container">
                                 <h4>Incluye:</h4>
@@ -538,7 +556,8 @@
                                 <!-- <div class="cart-items" name="products">
                                 </div> -->
                                 <section class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="giftCheckbox">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1"
+                                        name="giftCheckbox">
                                     <label class="form-check-label submitFormBtn" for="exampleCheck1">¿Es un regalo para
                                         alguien más?</label>
                                 </section>
@@ -566,8 +585,8 @@
                                 </div>
                                 <section class="form-group">
                                     <label for="resumenDeCompra">Resúmen de Compra</label>
-                                    <textarea class="form-control" name="cartBrief" id="cartBrief"
-                                        rows="3" readonly></textarea>
+                                    <textarea class="form-control" name="cartBrief" id="cartBrief" rows="3"
+                                        readonly></textarea>
                                 </section>
                                 <section class="form-check">
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1" name="checkbox">
@@ -595,23 +614,28 @@
     <section class="container content-section purchDiv">
         <h2 class="section-header">COMPLETAR PEDIDO</h2>
         <div class="row">
-            <div class="cart-total">
+            <!-- <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"> -->
+            <div class="cart-total text-center">
                 <strong class="cart-total-title">Total</strong>
-                <span class="cart-total-price">$0</span>
+                <span class="cart-total-price">0.01</span>
             </div>
-            <button class="btn btn-primary btn-purchase" type="button">COMPRAR</button>
+            <button class="btn btn-primary btn-purchase" type="button" style="display: none;">COMPRAR</button>
+            <div id="paypal-button-container"></div>
+            <!-- </div> -->
         </div>
-        <div class="cart-row">
-            <span class="cart-item cart-header cart-column">EXPERIENCIA</span>
+        <!-- <div class="cart-row"> -->
+        <!-- <span class="cart-item cart-header cart-column">EXPERIENCIA</span>
             <span class="cart-price cart-header cart-column">PRECIO</span>
-            <span class="cart-quantity cart-header cart-column">CANTIDAD</span>
-        </div>
+            <span class="cart-quantity cart-header cart-column">CANTIDAD</span> -->
+        <!-- </div> -->
         <div class="cart-items">
         </div>
 
     </section>
 
-    <footer class="main-footer">
+    <footer class="main-footer bg-dark">
         <div class="container main-footer-container">
             <h3><a href="/" class="band-name">thewowbox.mx</a></h3>
             <ul class="nav footer-nav">
@@ -641,60 +665,76 @@
         crossorigin="anonymous"></script>
     <script src="/assets/js/jqueryCounterupMin.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script>
+
+    </script>
     <script type="text/javascript">
 
         function unit2Premiums() {
             $(".unit1, .unit2, .unit3, .unit4, .unit6Premium, #experienciasCards").hide();
             $(".unit5Premium").show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
-            return false;
+            // $("html, body").animate({ scrollTop: 0 }, "slow");
+            // return false;
         };
         function unit4Premiums() {
             $(".unit1, .unit2, .unit3, .unit4, .unit5Premium, #experienciasCards").hide();
+            $('.imgPre').css("background-image", "url(Images/hCelebrarUno.jpg)");
             $(".unit6Premium").show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
-            return false;
+            // $("html, body").animate({ scrollTop: 0 }, "slow");
+            // return false;
         };
         function unit1Wow() {
             $(".unit5Premium, .unit2, .unit3, .unit4, .unit6Premium, #experienciasCards").hide();
+            $('.imgPre').css("background-image", "url(Images/cVinosUno.jpg)");
             $(".unit1").show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
-            return false;
+            // $("html, body").animate({ scrollTop: 0 }, "slow");
+            // return false;
         };
         function unit2Wow() {
             $(".unit1, .unit2Premium, .unit3, .unit4, .unit5Premium, .unit6Premium, #experienciasCards ").hide();
+            $('.imgPre').css("background-image", "url(Images/cCervezaUno.jpg)");
             $(".unit2").show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
-            return false;
+            // $("html, body").animate({ scrollTop: 0 }, "slow");
+            // return false;
         };
         function unit4Wow() {
             $(".unit1, .unit2, .unit3, .unit5Premium, .unit6Premium, #experienciasCards").hide();
+            $('.imgPre').css("background-image", "url(Images/hCelebrarUno.jpg)");
             $(".unit4").show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
-            return false;
+            // $("html, body").animate({ scrollTop: 0 }, "slow");
+            // return false;
         };
         function unit3Wow() {
             $(".unit1, .unit2, .unit4, .unit5Premium, .unit6Premium, #experienciasCards").hide();
+            $('.imgPre').css("background-image", "url(Images/nJuegosUno.jpg)");
             $(".unit3").show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
-            return false;
+            // $("html, body").animate({ scrollTop: 0 }, "slow");
+            // return false;
         };
         function unit5Wow() {
             $(".unit1, .unit5Premium,.unit6Premium, .unit3, .unit4, #experienciasCards ").hide();
             $(".unit2").show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
-            return false;
+            // $("html, body").animate({ scrollTop: 0 }, "slow");
+            // return false;
         };
         function unit6Wow() {
             $(".unit1, .unit6Premium, .unit5Premium, .unit3, .unit2, #experienciasCards ").hide();
+            $('.imgPre').css("background-image", "url(Images/hCelebrarUno.jpg)");
             $(".unit4").show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
-            return false;
+            // $("html, body").animate({ scrollTop: 0 }, "slow");
+            // return false;
         };
+        function unit2Propuesta() {
+            $(".unit1, .unit6Premium, .unit5Premium, .unit3, .unit2, .unit4, #experienciasCards ").hide();
+            $(".unit5Premium").show();
+        }
+        function unit5Propuesta() {
+            $(".unit1, .unit6Premium, .unit5Premium, .unit3, .unit4, #experienciasCards, .unit5Premium ").hide();
+            $(".unit2").show();
+        }
 
 
         $("#descubrirbtn").on("click", function (event) {
-
             var searchedZip = $("#zipCodeInput").val().trim();
 
             searchedZipi = searchedZip.replace(/\s+/g, "");
@@ -721,7 +761,55 @@
 
                 }
             });
+            paypal.Buttons({
+                createOrder: function (data, actions) {
+                    var theAmount = $(".cart-total span").text().replace("$", '').trim();
+                    console.log(theAmount);
+                    // This function sets up the details of the transaction, including the amount and line item details.
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: theAmount,
+                            }
+                        }]
+                    });
+                },
+                onApprove: function (data, actions) {
+                    $(".formdiv").show();
+                    $(".purchDiv").hide();
+                    var cookieValue = [$("input[type=hidden][name=title1]").val(), $("input[type=number][name=quantity1]").val(), $("input[type=hidden][name=title2]").val(), $("input[type=number][name=quantity2]").val(), $("input[type=hidden][name=title3]").val(), $("input[type=number][name=quantity3]").val(), $("input[type=hidden][name=title4]").val(), $("input[type=number][name=quantity4]").val(), $("input[type=hidden][name=title5]").val(), $("input[type=number][name=quantity5]").val(), $("input[type=hidden][name=title6]").val(), $("input[type=number][name=quantity6]").val()];
+                    var cookie2 = [];
+                    if (cookieValue[0]) {
+                        cookie2.push("Experiencia: " + [cookieValue[0], " Cantidad: " + cookieValue[1]]);
+                    }
+                    if (cookieValue[2]) {
+                        cookie2.push("Experiencia: " + [cookieValue[2], " Cantidad: " + cookieValue[3]]);
+                    }
+                    if (cookieValue[4]) {
+                        cookie2.push("Experiencia: " + [cookieValue[4], " Cantidad: " + cookieValue[5]]);
+                    }
+                    if (cookieValue[6]) {
+                        cookie2.push("Experiencia: " + [cookieValue[6], " Cantidad: " + cookieValue[7]]);
+                    }
+                    if (cookieValue[8]) {
+                        cookie2.push("Experiencia: " + [cookieValue[8], " Cantidad: " + cookieValue[9]]);
+                    }
+                    if (cookieValue[10]) {
+                        cookie2.push("Experiencia: " + [cookieValue[10], " Cantidad: " + cookieValue[11]]);
+                    }
+
+                    document.getElementById("cartBrief").value = cookie2;
+
+                    // This function captures the funds from the transaction.
+                    return actions.order.capture().then(function (details) {
+                        // This function shows a transaction success message to your buyer.
+                        alert('Transacción completada por ' + details.payer.name.given_name);
+                    });
+                }
+            }).render('#paypal-button-container');
+            //This function displays Smart Payment Buttons on your web page.
         });
+
 
         // $(".submitFormBtn").on("click", function (event) {
         //     $(".purchDiv").show();

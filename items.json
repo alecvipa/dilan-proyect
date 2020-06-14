@@ -2,13 +2,16 @@
   "experiencias": [
     {
       "id": 1,
-      "name": "Cata de vino",
+      "name": "Cata de vinos",
       "price": 129900,
       "description": "Sal de la rutina y disfruta de esta cata de vinos desde la comodidad de tu casa. Además de probar estas deliciosas opciones, te darás cuenta de que no necesitas ser experto para seleccionar platilos simples para acompañar y aprenderás algunos tips básicos en compañía de tu familia o amigos.",
       "brief":"Descubre deliciosos matices y aprende como maridarlos en esta cata de vinos",
       "incluye": ["1 botella de vino blanco 750ml", "1 botella de vino tinto 750ml (varietal)", "1 botella de vino tinto Reserva 750ml","Charola de quesos", "Cata en video"],
       "people":"4-5",
-      "imgName": "Album1.png"
+      "imgName": "cVinosUno.jpg",
+      "imgName2": "cVinosDos.jpg",
+      "imgName3": "cVinosTres.jpg",
+      "imgName4": "cVinosCuatro.jpg"
     },
     {
       "id": 2,
@@ -18,7 +21,10 @@
       "brief":"Conoce matices inigualables que la malta otorga en esta cata de cervezas artesanales",
       "incluye": ["6 cervezas de 3 estilos diferentes", "Selección de chocolates", "Cata en video"],
       "people":"2",
-      "imgName": "Album2.png"
+      "imgName": "cCervezaUno.jpg",
+      "imgName2": "cCervezaDos.jpg",
+      "imgName3": "cCervezaTres.jpg",
+      "imgName4": "cCervezaCuatro.jpg"
     },
     {
       "id": 3,
@@ -28,7 +34,10 @@
       "brief":"Diviértete en compañía con juegos, botanas y la mejor actitud en esta noche de juegos",
       "incluye": ["Juegos de mesa", "Tarjetas de juegos", "8 cervezas"],
       "people":"4",
-      "imgName": "Album3.png"
+      "imgName": "nJuegosUno.jpg",
+      "imgName2": "nJuegosDos.jpg",
+      "imgName3": "nJuegosTres.jpg",
+      "imgName4": "nJuegosCuatro.jpg"
     },
     {
       "id": 4,
@@ -38,19 +47,25 @@
       "brief":"Vive un momento especial como tu prefieras con esta hora de celebrar",
       "incluye": ["1 tarta de plátano con dulce de leche", "Caja de chocolates"],
       "people":"6",
-      "imgName": "Album4.png"
+      "imgName": "hCelebrarUno.jpg",
+      "imgName2": "hCelebrarUno.jpg",
+      "imgName3": "hCelebrarDos.jpg",
+      "imgName4": "hCelebrarTres.jpg"
     }
   ],
   "experienciaPremium": [
     {
       "id": 5,
-      "name": "Cata de cerveza artesanal Premium",
+      "name": "Cata de cerveza artesanal para 4",
       "price": 99900,
       "description": "A veces necesitamos una oportunidad para compartir tiempo juntos y disfrutar las pequeñas cosas de la vida. Prueba diferentes estilos de cerveza artesanal mexicana y conoce algunos tips básicos sobre esta deliciosa bebida.",
       "brief":"Conoce matices inigualables que la malta otorga en esta cata de cervezas artesanales",
       "incluye": ["12 cervezas PREMIUM de 3 estilos diferentes", "Selección de chocolates", "Cata en video"],
       "people":"4",
-      "imgName": "Album2.png"
+      "imgName": "cCervezaUno.jpg",
+      "imgName2": "cCervezaDos.jpg",
+      "imgName3": "cCervezaTres.jpg",
+      "imgName4": "cCervezaCuatro.jpg"
     },
     {
       "id": 6,
@@ -60,7 +75,10 @@
       "brief":"Vive un momento especial como tu prefieras con esta hora de celebrar",
       "incluye": ["1 pastel PREMIUM de: Vainilla con nutella, Vainilla con betún de queso, Chocolate con Nutella, Plátano con nutella o Zanahoria con betún de queso ", "Caja de chocolates"],
       "people":"8",
-      "imgName": "Album4.png"
+      "imgName": "hCelebrarUno.jpg",
+      "imgName2": "hCelebrarUno.jpg",
+      "imgName3": "hCelebrarDos.jpg",
+      "imgName4": "hCelebrarTres.jpg"
     }
     
   ]

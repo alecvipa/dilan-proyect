@@ -27,8 +27,11 @@ html, body {
 }
 
 .bannerTemporada{
+    background-image: url("Images/bannerPapa.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 400px;
-    background-color: #777;
 }
 .zipBrowserTitle{
     padding-top: 2%;
@@ -71,7 +74,6 @@ html, body {
 } */
 
 .main-footer {
-    background-color: grey;
     color: white;
     padding: .25em 0;
 }
@@ -178,12 +180,22 @@ body {
 /* TESTING PRE VISUALIZATION OF PRODUCTS */
 .imgPre{
     margin-top: 5%;
-    height: 30rem;
-    /* background-image: url("Images/Cofee.png"); */
+    height: 34rem;
+    /* background-image: url("Images/bannerPapa.jpg"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+.sucessImg{
+     background-image: url("Images/sucessWowBox.jpg");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: 40rem;
+}
+/* .bodySucess{
+    margin-bottom: 30%;
+} */
 #imgNameItem{
     margin-top: 5%;
     height: 30rem;
@@ -336,6 +348,7 @@ body {
     text-align: end;
     margin-top: 10px;
     margin-right: 10px;
+    margin-bottom: 5%;
 }
 
 .cart-total-title {
@@ -356,7 +369,7 @@ body {
     font-size: 1.75em;
 }
 .sucessMessage{
-    height: 400px;
+    height: 800px;
 }
 .sucessTitle{
     margin-top: 20%;
@@ -365,8 +378,16 @@ body {
     color: white !important;
 }
 
+
 @media (max-width: 1000px) {
     .shop-item-image {
         height: 30rem !important;
     }
+    .sucessImg{
+        height: 22rem;
+   }
+   .sucessMessage{
+        height: 600px;
+   }
+
 }
