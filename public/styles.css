@@ -389,5 +389,8 @@ body {
    .sucessMessage{
         height: 600px;
    }
+   #constructImg{
+       height: 25rem !important;
+   }
 
 }
