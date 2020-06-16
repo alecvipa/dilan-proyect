@@ -5,7 +5,7 @@ $(document).ready(function () {
     } else {
         ready()
     }
-    $(".zipAlert, .zipAlert2, .formdiv, .purchDiv, .zipCodeBrowser").hide();
+    $(".zipAlert, .zipAlert2, .formdiv, .purchDiv, .zipCodeBrowser, .zonasEntrega, .zonaNotFound").hide();
     $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6, .verPropuesta1, .verPropuesta3, .verPropuesta4, .verPropuesta5, .verPropuesta6, .verProp1, .verProp, .verProp3, .verProp4, .verProp6, .btnPre5").hide();
 
     // Función para botones de imágen
@@ -57,8 +57,9 @@ $(document).ready(function () {
     
     $(".btnRegresar").on("click", function () {
         $("#experienciasCards").show();
-        $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6, .zipCodeBrowser, .zipAlert, .zipAlert2, .formdiv, .purchDiv, .unit5Premium, .unit6Premium").hide();
+        $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6, .zipCodeBrowser, .zipAlert, .zipAlert2, .formdiv, .purchDiv, .unit5Premium, .unit6Premium, .zonasEntrega, .zonaNotFound").hide();
     });
+
     // Función para on click purchase button, mostrar el div de detalles de compra
     $(".btn-purchase").on("click", function (){
         $(".formdiv").show();
@@ -91,8 +92,8 @@ $(document).ready(function () {
 
     $(".nxt1").on("click", function () {
         $("#experienciasCards").hide();
+        $(".zonasEntrega, .zonaNotFound").show(1000)
         $(".unit1, .unit2, .unit3, .unit4, .unit5Premium, .unit6Premium").hide();
-        $(".zipCodeBrowser").show(1000)
 
     });
 

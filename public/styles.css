@@ -377,11 +377,17 @@ body {
 .band-name{
     color: white !important;
 }
+.titleZonaE{
+    padding-top: 2%;
+}
 
 
 @media (max-width: 1000px) {
-    .shop-item-image {
-        height: 30rem !important;
+    .shop-item-image{
+        height: 20rem !important;
+    }
+    .imgPre {
+        height: 22rem !important;
     }
     .sucessImg{
         height: 22rem;
@@ -392,5 +398,14 @@ body {
    #constructImg{
        height: 25rem !important;
    }
+   .verPremium4{
+       margin: -1%;
+   }
+   .btn1first, .btn2first, .btn3first, .btn4first, .btn5first, .btn6first{
+    margin-left: -1% !important;
+    }
+    .imgCarrousel{
+        margin-top: 10% !important;
+    }
 
 }
