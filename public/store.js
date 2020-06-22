@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    alert("Por favor acepta nuestro aviso de privacidad y términos y condiciones")
 
     if (document.readyState == 'loading') {
         document.addEventListener('DOMContentLoaded', ready)

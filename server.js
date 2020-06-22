@@ -14,12 +14,18 @@ const fs = require('fs');
 const stripe = require('stripe')(stripeSecretKey);
 const nodemailer = require("nodemailer");
 var PORT = process.env.PORT || 3000;
+const targetBaseUrl = 'https://www.thewowbox.mx';
+
+function handleRedirect(req,res){
+  const targetUrl = targetBaseUrl + req.originalUrl;
+  res.redirect(targetUrl);
+};
 
 app.set('view engine', 'ejs')
 app.use(express.json())
 app.use(express.static('public'))
 
-
+app.get('*', handleRedirect);
 
 
 
@@ -69,26 +75,55 @@ app.get('/privacy', function (req, res) {
     } else {
       res.render('privacy.ejs');
     }
-  })
-})
+  });
+});
 
-app.post('/purchase', function (req, res) {
+app.get('/contacto', function (req, res) {
   fs.readFile('items.json', function (error, data) {
     if (error) {
       res.status(500).end()
     } else {
+      res.render('contact.ejs');
+    }
+  });
+});
+
+app.get('/faq', function (req, res) {
+  fs.readFile('items.json', function (error, data) {
+    if (error) {
+      res.status(500).end()
+    } else {
+      res.render('faq.ejs');
+    }
+  });
+});
+app.get('/terminos', function (req, res) {
+  fs.readFile('items.json', function (error, data) {
+    if (error) {
+      res.status(500).end()
+    } else {
+      res.render('terminos.ejs');
+    }
+  });
+});
+
+app.post('/purchase', function (req, res) {
+  fs.readFile('items.json', function (error, data) {
+    if (error) {
+      res.status(500).end();
+    } else {
       console.log('purchase')
       const itemsJson = JSON.parse(data);
       const itemsArray = itemsJson.experiencias.concat(itemsJson.experienciaPremium);
-      let total = 0
+      let total = 0;
       var body = req.body;
       console.log(body);
 
       req.body.items.forEach(function (item) {
         const itemJson = itemsArray.find(function (i) {
-          return i.id == item.id
+          return i.id == item.id;
         });
-        total = total + itemJson.price * item.quantity
+        total = total + itemJson.price * item.quantity;
       });
 
       stripe.charges.create({
