@@ -120,7 +120,7 @@
     <div class="masterDiv container" id="selector">
         <div class="row">
             <section class="container content-section" id="experienciasCards">
-                <div class="badgeWow">
+                <div class="badgeWow titleProdResponsiveness">
                     <h2 class="section-header">ELIGE UNA <span class="italica">EXPERIENCIA</span></h2>
                 </div>
                 <br>
@@ -138,8 +138,8 @@
 
                         </div>
                         <div class="moreDetails container text-left ">
-                            <span class="shop-item-title text-left"><%= item.name %></span>
-                            <h4><span class="badge badge-secondary verPremium<%= item.id %>"
+                            <span class="shop-item-title text-left titleProdResponsiveness"><%= item.name %></span>
+                            <h4><span class="badge badge-secondary verPremium<%= item.id %> titleProdResponsiveness"
                                     style="background-color: goldenrod; " onclick="unit<%= item.id %>Premiums()"><i
                                         class="fas fa-gift"
                                         style="color: gold; padding-top: 3%; padding-bottom: 3%;"></i> Ver Premium
@@ -148,12 +148,12 @@
                                     style="color: lightsteelblue;" onclick="location.href='#wowBoxes';"></i>
                                 DETALLES</button> -->
                                 <!-- <button class="btn btn-primary shop-item-button" type="button">AGREGAR</button> -->
-                                <span class="badge badge-secondary bg-primary" onclick="unit<%= item.id %>Wow()"
+                                <span class="badge badge-secondary bg-primary titleProdResponsiveness" onclick="unit<%= item.id %>Wow()"
                                     style="padding-top: 2.5% !important; padding-bottom: 2.5% !important;"><i
                                         class="fas fa-gift" style="color: skyblue;"></i> Ver Wow Box</span></h4>
                             <div class="text-left">
                                 <br>
-                                <p style="width: 21rem; font-size: 15px;"><%=item.brief%> <br> <br> Desde
+                                <p style="width: 21rem; font-size: 15px;" class="corpDescription"><%=item.brief%> <br> <br> Desde
                                     $<%=item.price/100%> y entregado en
                                     la puerta de tu casa
                                 </p>

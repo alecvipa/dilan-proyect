@@ -481,4 +481,17 @@ body {
         background-size: cover;
         height: 300px;
     }
+    .shop-item-image {
+        height: 280px;
+    }
+    body{
+        max-width: 576px;
+    }
+    .titleProdResponsiveness{
+        font-size: 10pt !important;
+    }
+    .corpDescription{
+        width: 14rem !important;
+        font-size: 12pt !important;
+    }
 }
