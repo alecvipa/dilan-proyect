@@ -403,6 +403,10 @@ body {
 .contactList{
     margin-left: 7%;
 }
+.imgCarrousel1{
+    max-width: 100px;
+    margin-left: 15%;
+}
 @media (min-width: 401px) and (max-width: 768px) {
     .shop-item-image{
         height: 20rem !important;
@@ -488,10 +492,24 @@ body {
         max-width: 576px;
     }
     .titleProdResponsiveness{
-        font-size: 10pt !important;
+        font-size: 15pt !important;
     }
     .corpDescription{
         width: 14rem !important;
         font-size: 12pt !important;
+    }
+    .eligeExperienciaTitle{
+        font-size: 8pt !important;
+    }
+    .imgPre{
+        height: 18rem !important;
+    }
+    .imgCarrousel{
+        margin-top: 10%;
+        max-width: 80px;
+    }
+    .imgCarrousel1{
+        max-width: 80px;
+        margin-left: 2%;
     }
 }
