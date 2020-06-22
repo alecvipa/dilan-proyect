@@ -25,7 +25,7 @@ app.set('view engine', 'ejs')
 app.use(express.json())
 app.use(express.static('public'))
 
-app.get('*', handleRedirect);
+app.get('/', handleRedirect);
 
 
 
