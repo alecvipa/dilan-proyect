@@ -531,4 +531,18 @@ body {
     .formdiv{
         height: 1378px;
     }
+    .cart-row, .btn-danger{
+        font-size: 6pt !important;
+    }
+    .btn-payPal, .cart-total-title{
+        margin-left: 5%;
+        font-size: 6pt;
+    }
+    .cart-item-image{
+        width: 57px;
+    }
+    .btnDangerSmaller{
+        width: 60px;
+        margin-left: -13%;
+    }
 }

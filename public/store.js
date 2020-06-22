@@ -224,7 +224,7 @@ $(document).ready(function () {
         <span class="cart-price cart-column" name="price">${price}</span>
         <div class="cart-quantity cart-column">
             <input class="cart-quantity-input" type="number" value="1" name="quantity${id}">
-            <button class="btn btn-danger" type="button">ELIMINAR</button>
+            <button class="btn btn-danger btnDangerSmaller" type="button">ELIMINAR</button>
         </div>`
         cartRow.innerHTML = cartRowContents;
         cartItems.append(cartRow);
