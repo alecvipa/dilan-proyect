@@ -474,6 +474,9 @@ body {
         width: 20rem;
         margin-left: 6%;
     }
+    .contactList{
+        width: 80%;
+    }
 
 
 }
@@ -511,5 +514,21 @@ body {
     .imgCarrousel1{
         max-width: 80px;
         margin-left: 2%;
+    }
+    .sucessImg{
+        height: 20rem;
+    }
+    .privacyResponsive{
+        font-size: 1.5rem !important;
+    }
+    .logoWow{
+        height: 16rem;
+        width: 18rem;
+    }
+    .contactList{
+        width: 80%;
+    }
+    .formdiv{
+        height: 1378px;
     }
 }
