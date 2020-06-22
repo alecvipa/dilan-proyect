@@ -14,22 +14,22 @@ const fs = require('fs');
 const stripe = require('stripe')(stripeSecretKey);
 const nodemailer = require("nodemailer");
 var PORT = process.env.PORT || 3000;
-const targetBaseUrl = 'https://www.thewowbox.mx';
+const targetBaseUrl = 'https://www.thewowbox.mx/inicio';
 
-function handleRedirect(req,res){
-  const targetUrl = targetBaseUrl + req.originalUrl;
-  return res.redirect(targetUrl);
-};
+// function handleRedirect(req,res){
+//   const targetUrl = targetBaseUrl + req.originalUrl;
+//   return 
+// };
 
 app.set('view engine', 'ejs')
 app.use(express.json())
 app.use(express.static('public'))
 
-app.get('/', handleRedirect);
+// app.get('/', handleRedirect);
 
 
 
-app.get('/dev', function (req, res) {
+app.get('/inicio', function (req, res) {
   fs.readFile('items.json', function (error, data) {
     if (error) {
       res.status(500).end()
@@ -47,10 +47,11 @@ app.get('/', function (req, res) {
     if (error) {
       res.status(500).end()
     } else {
-      res.render('construction.ejs', {
-        stripePublicKey: stripePublicKey,
-        items: JSON.parse(data)
-      });
+      res.redirect(targetBaseUrl);
+      // res.render('construction.ejs', {
+      //   stripePublicKey: stripePublicKey,
+      //   items: JSON.parse(data)
+      // });
     }
   })
 });
