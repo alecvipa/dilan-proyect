@@ -103,6 +103,7 @@ $(document).ready(function () {
     $(".btnAgre1").on("click", function(){
         $(".btnAgre1").html("AGREGADA");
         $('.btnAgre1').prop('disabled', true);
+        $('.btnAgre2').prop('disabled', false);
 
     });
     // $(".btnAgre2").on("click", function(){
