@@ -105,31 +105,31 @@ $(document).ready(function () {
         $('.btnAgre1').prop('disabled', true);
 
     });
-    $(".btnAgre2").on("click", function(){
-        $(".btnAgre2").html("AGREGADA");
-        $('.btnAgre2').prop('disabled', true);
+    // $(".btnAgre2").on("click", function(){
+    //     $(".btnAgre2").html("AGREGADA");
+    //     $('.btnAgre2').prop('disabled', true);
 
-    });
-    $(".btnAgre3").on("click", function(){
-        $(".btnAgre3").html("AGREGADA");
-        $('.btnAgre3').prop('disabled', true);
+    // });
+    // $(".btnAgre3").on("click", function(){
+    //     $(".btnAgre3").html("AGREGADA");
+    //     $('.btnAgre3').prop('disabled', true);
 
-    });
-    $(".btnAgre4").on("click", function(){
-        $(".btnAgre4").html("AGREGADA");
-        $('.btnAgre4').prop('disabled', true);
+    // });
+    // $(".btnAgre4").on("click", function(){
+    //     $(".btnAgre4").html("AGREGADA");
+    //     $('.btnAgre4').prop('disabled', true);
 
-    });
-    $(".btnAgre5").on("click", function(){
-        $(".btnAgre5").html("AGREGADA");
-        $('.btnAgre5').prop('disabled', true);
+    // });
+    // $(".btnAgre5").on("click", function(){
+    //     $(".btnAgre5").html("AGREGADA");
+    //     $('.btnAgre5').prop('disabled', true);
 
-    });
-    $(".btnAgre6").on("click", function(){
-        $(".btnAgre6").html("AGREGADA");
-        $('.btnAgre6').prop('disabled', true);
+    // });
+    // $(".btnAgre6").on("click", function(){
+    //     $(".btnAgre6").html("AGREGADA");
+    //     $('.btnAgre6').prop('disabled', true);
 
-    });
+    // });
 
     // function ready() {
         var removeCartItemButtons = document.getElementsByClassName('btn-danger')
