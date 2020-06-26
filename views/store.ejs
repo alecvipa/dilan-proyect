@@ -127,7 +127,7 @@
                 <div class="shop-items col text-center">
                     <% items.experiencias.forEach(function(item){ %>
                     <div class="shop-item" data-item-id="<%= item.id %>">
-                        <img class="shop-item-image" src="Images/<%= item.imgName %>">
+                        <img class="shop-item-image" src="Images/<%= item.imgName %>" class="pointer">
                         <div class="shop-item-details">
                             <!-- <div class="col-4">
                                 <span class="shop-item-price">$<%= item.price / 100 %></span>
@@ -139,7 +139,7 @@
                         </div>
                         <div class="moreDetails container text-left ">
                             <span class="shop-item-title text-left titleProdResponsiveness"><%= item.name %></span>
-                            <h4><span class="badge badge-secondary verPremium<%= item.id %> titleProdResponsiveness"
+                            <h4 class="pointer"><span class="badge badge-secondary verPremium<%= item.id %> titleProdResponsiveness"
                                     style="background-color: goldenrod; " onclick="unit<%= item.id %>Premiums()"><i
                                         class="fas fa-gift"
                                         style="color: gold; padding-top: 3%; padding-bottom: 3%;"></i> Ver Premium
@@ -163,7 +163,7 @@
                     <% }) %>
                 </div>
                 <div class="center">
-                    <button class="btn btn-success nxt1" type="button">DATOS DE LA COMPRA</button>
+                    <button class="btn btn-success nxt1 pointer" type="button">DATOS DE LA COMPRA</button>
                 </div>
             </section>
         </div>
@@ -180,25 +180,25 @@
                             </div>
                             <div class="carrosuel">
                                 <img src="Images/<%=item.imgName2%>"
-                                    class="imgCarrousel1 rounded float-left imgCarrousel btn<%= item.id %>first" alt="img" id="carr1">
+                                    class="imgCarrousel1 pointer rounded float-left imgCarrousel btn<%= item.id %>first" alt="img" id="carr1">
                                 <img src="Images/<%=item.imgName3%>"
-                                    class="rounded float-left imgCarrousel btn<%= item.id %>second" alt="img"
+                                    class="rounded pointer float-left imgCarrousel btn<%= item.id %>second" alt="img"
                                     id="carr2">
                                 <img src="Images/<%=item.imgName4%>"
-                                    class="rounded float-left imgCarrousel btn<%= item.id %>third" alt="img" id="carr3">
+                                    class="rounded pointer float-left imgCarrousel btn<%= item.id %>third" alt="img" id="carr3">
                             </div>
                         </div>
                         <div class="col-md-6 bodyCards">
                             <h3>
-                                <br><span class="badge badge-secondary verPremium<%= item.id %>"
+                                <br><span class="badge pointer badge-secondary verPremium<%= item.id %>"
                                     style="background-color: goldenrod; " onclick="unit<%= item.id %>Premiums()"><i
                                         class="fas fa-gift" style="color: gold;"></i> Ver Premium Box</span>
                                 <br>
-                                <span class="badge badge-secondary verPropuesta<%= item.id %>"
+                                <span class="badge pointer badge-secondary verPropuesta<%= item.id %>"
                                     style="background-color: goldenrod; " onclick="unit<%= item.id %>Propuesta()"><i
                                         class="fas fa-users"></i> Ver para 4 personas</span>
                                 <br>
-                                <button class="btn btn-light btnRegresar btnReMargin" type="button"><i
+                                <button class="btn pointer btn-light btnRegresar btnReMargin" type="button"><i
                                         class="fas fa-undo"></i>
                                     ATRÁS</button>
                             </h3>
@@ -226,9 +226,9 @@
                                         calificaron
                                         con 5 estrellas esta experiencia</span></i>
                                 </div>
-                                <button class="btn btn-primary shop-item-button btnPreview"
+                                <button class="btn pointer btn-primary shop-item-button btnPreview"
                                     type="button">AGREGAR</button>
-                                <button class="btn btn-success nxt1" type="button"
+                                <button class="btn pointer btn-success nxt1" type="button"
                                     style="font-size: 1rem !important; margin-top: 3%;">DATOS DE LA
                                     COMPRA</button>
                             </div>
@@ -278,7 +278,7 @@
                                         calificaron
                                         con 5 estrellas esta experiencia</span></i>
                                 </div>
-                                <div class="col-md-6 text-right">
+                                <div class="col-md-6 text-right pointer">
                                    <a href="/contacto">Compartir mi opinión</a>
                                 </div>
                             </div>
@@ -296,7 +296,7 @@
                     </div> -->
                     <br>
                     <div class="row">
-                        <div class="col">
+                        <div class="col pointer">
                             <h4>¡Se el primero en dejarnos tu opinión! <span><a href="/contacto">Compartir mi opinión</a></span></h4>
                             <!-- <h5>La mejor experiencia que he tenido</h5>
                             <h6 style="color: grey;">Rosa Rodríguez</h6>
@@ -344,7 +344,7 @@
                                     <!-- <img class="shop-item-image" id="imgNameItem" src="Images/<%= item.imgName %>"> -->
                                 </div>
                             </div>
-                            <div class="carrosuel">
+                            <div class="carrosuel pointer">
                                 <img src="Images/<%=item.imgName2%>"
                                     class="imgCarrousel1 rounded float-left imgCarrousel btn<%= item.id %>first" alt="img" id="carr1">
                                 <img src="Images/<%=item.imgName3%>"
@@ -357,15 +357,15 @@
                         <div class="col-md-6 bodyCards">
 
                             <h3>
-                                <br><span class="badge badge-secondary bg-primary btnPre<%= item.id %>"
+                                <br><span class="badge pointer badge-secondary bg-primary btnPre<%= item.id %>"
                                     onclick="unit<%= item.id %>Wow()"><i class="fas fa-gift"
                                         style="color: skyblue;"></i> Ver Wow Box</span>
                                 <br>
-                                <span class="badge badge-secondary verProp<%= item.id %>"
+                                <span class="badge pointer badge-secondary verProp<%= item.id %>"
                                     style="background-color: goldenrod; " onclick="unit<%= item.id %>Propuesta()"><i
                                         class="fas fa-user-friends"></i> Ver para 2 personas</span>
                                 <br>
-                                <button class="btn btn-light btnRegresar btnReMargin" type="button"><i
+                                <button class="btn pointer btn-light btnRegresar btnReMargin" type="button"><i
                                         class="fas fa-undo"></i>
                                     ATRÁS</button>
                             </h3>
@@ -393,9 +393,9 @@
                                         calificaron
                                         con 5 estrellas esta experiencia</span></i>
                                 </div>
-                                <button class="btn btn-primary shop-item-button btnPreview"
+                                <button class="btn pointer btn-primary shop-item-button btnPreview"
                                     type="button">AGREGAR</button>
-                                <button class="btn btn-success nxt1" type="button"
+                                <button class="btn pointer btn-success nxt1" type="button"
                                     style="font-size: 1rem !important; margin-top: 3%;">DATOS DE LA
                                     COMPRA</button>
                             </div>
@@ -443,7 +443,7 @@
                                         calificaron
                                         con 5 estrellas esta experiencia</span></i>
                                 </div>
-                                <div class="col-md-6 text-right">
+                                <div class="col-md-6 text-right pointer">
                                    <a href="/contacto">Compartir mi opinión</a>
                                 </div>
                             </div>
@@ -461,7 +461,7 @@
                     </div> -->
                     <br>
                     <div class="row">
-                        <div class="col">
+                        <div class="col pointer">
                             <h4>¡Se el primero en dejarnos tu opinión! <span><a href="/contacto">Compartir mi opinión</a></span></h4>
                             <!-- <h5>La mejor experiencia que he tenido</h5>
                             <h6 style="color: grey;">Rosa Rodríguez</h6>
@@ -504,7 +504,7 @@
 
     </div>
     <div class="zonasEntrega bg-dark text-center">
-        <div class="container text-center text-white titleZonaE">
+        <div class="container text-center text-white titleZonaE pointer">
             <h4>SELECCIONA UNA ZONA DE ENTREGA</h4>
             <br>
             <!-- <button class="btn btn-light btnRegresar" type="button"><i class="fas fa-undo"></i> ATRÁS</button> -->
@@ -682,7 +682,7 @@
                                         recibir novedades de thewowbox.mx</label>
                                 </section>
                                 <br>
-                                <button type="submit" class="btn btn-primary btn-lg submitFormBtn">Enviar</button>
+                                <button type="submit" class="btn btn-primary btn-lg submitFormBtn pointer">Enviar</button>
                                 <br>
                                 <br>
                                 <section class="form-check">
@@ -710,9 +710,9 @@
             <div class="col-md-4"> -->
             <div class="cart-total text-center">
                 <strong class="cart-total-title">Total</strong>
-                <span class="cart-total-price">0.01</span>
+                $<span class="cart-total-price">0.01</span>
             </div>
-            <button class="btn btn-primary btn-purchase" type="button" style="display: none;">COMPRAR</button>
+            <button class="btn btn-primary btn-purchase pointer" type="button" style="display: none;">COMPRAR</button>
             <div id="paypal-button-container"></div>
             <!-- </div> -->
         </div>
@@ -727,7 +727,7 @@
         <br>
         <br>
         <div class="row">
-            <button class="btn btn-success btn-payPal" type="button">IR A PAGO</button>
+            <button class="btn btn-success btn-payPal pointer" type="button">IR A PAGO</button>
         </div>
 
     </section>
@@ -744,14 +744,14 @@
 
                 </form>
                 <div style="text-align: center;">
-                    <button type="submit" class="btn btn-primary" id="descubrirbtn">Introducir Código</button>
+                    <button type="submit" class="btn btn-primary pointer" id="descubrirbtn">Introducir Código</button>
                     <!-- <button class="btn btn-light btnCodigoFalse" type="button">No cuento con código</button> -->
                 </div>
             </div>
             <div class="col-md"></div>
         </div>
     </div>
-    <div class="zipAlert2 bg-warning center">
+    <!-- <div class="zipAlert2 bg-warning center">
         <h4>¡Lo sentimos!, aún no soportamos tu localidad</h4>
         <div class="center">
             <a href="https://api.whatsapp.com/send?phone=525588488288" target="_blank" rel="noopener noreferrer"><i
@@ -759,7 +759,7 @@
                         class="font">CONTÁCTANOS POR
                         WHATSAPP PARA MÁS INFORMACIÓN</span></i></a>
         </div>
-    </div>
+    </div> -->
 
     <footer class="main-footer bg-dark">
         <div class="container main-footer-container">

@@ -25,6 +25,7 @@ html, body {
     padding: 0;
     min-height: 100%;
 }
+.pointer {cursor: pointer;}
 
 .bannerTemporada{
     background-image: url("Images/bannerPapa.jpg");
