@@ -103,11 +103,21 @@ $(document).ready(function () {
     $(".btnAgre1").on("click", function(){
         $(".btnAgre1").html("AGREGADA");
         $('.btnAgre1').prop('disabled', true);
+        if($('.btnAgre2').prop('disabled', true)){
+            console.log('.btnAgre2')
+        }else{
+            $('.btnAgre2').prop('disabled', false)
+        }
         $('.btnAgre2').prop('disabled', false);
         $('.btnAgre3').prop('disabled', false);
         $('.btnAgre4').prop('disabled', false);
         $('.btnAgre5').prop('disabled', false);
         $('.btnAgre6').prop('disabled', false);
+        $(".btnAgre2").html("AGREGAR");
+        $(".btnAgre3").html("AGREGAR");
+        $(".btnAgre4").html("AGREGAR");
+        $(".btnAgre5").html("AGREGAR");
+        $(".btnAgre6").html("AGREGAR");
 
     });
     $(".btnAgre2").on("click", function(){
