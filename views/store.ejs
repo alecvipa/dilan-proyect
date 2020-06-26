@@ -679,7 +679,7 @@
                                 <section class="form-check">
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1" name="checkbox">
                                     <label class="form-check-label submitFormBtn" for="exampleCheck1">Sí, me gustaría
-                                        recibir novedades de <span><a href="#">thewowbox.mx</a></span></label>
+                                        recibir novedades de thewowbox.mx</label>
                                 </section>
                                 <br>
                                 <button type="submit" class="btn btn-primary btn-lg submitFormBtn">Enviar</button>
@@ -778,7 +778,6 @@
 
     </script>
     <script type="text/javascript">
-        alert("Por favor acepta nuestro aviso de privacidad y términos y condiciones")
         function unit2Premiums() {
             $(".unit1, .unit2, .unit3, .unit4, .unit6Premium, #experienciasCards").hide();
             $(".unit5Premium").show();
@@ -900,6 +899,8 @@
                 }
             }).render('#paypal-button-container');
             //This function displays Smart Payment Buttons on your web page.
+            $(".btn-payPal").hide();
+            
         })
 
         $("#descubrirbtn").on("click", function (event) {
