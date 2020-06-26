@@ -99,7 +99,37 @@ $(document).ready(function () {
 
     // Función para ver premium box
     $(".unit5Premium, .unit6Premium").hide();
-    
+
+    $(".btnAgre1").on("click", function(){
+        $(".btnPreview1").html("AGREGADA");
+        $('.btnPreview1').prop('disabled', true);
+
+    });
+    $(".btnAgre2").on("click", function(){
+        $(".btnPreview2").html("AGREGADA");
+        $('.btnPreview2').prop('disabled', true);
+
+    });
+    $(".btnAgre3").on("click", function(){
+        $(".btnPreview3").html("AGREGADA");
+        $('.btnPreview3').prop('disabled', true);
+
+    });
+    $(".btnAgre4").on("click", function(){
+        $(".btnPreview4").html("AGREGADA");
+        $('.btnPreview4').prop('disabled', true);
+
+    });
+    $(".btnAgre5").on("click", function(){
+        $(".btnPreview5").html("AGREGADA");
+        $('.btnPreview5').prop('disabled', true);
+
+    });
+    $(".btnAgre6").on("click", function(){
+        $(".btnPreview6").html("AGREGADA");
+        $('.btnPreview6').prop('disabled', true);
+
+    });
 
     // function ready() {
         var removeCartItemButtons = document.getElementsByClassName('btn-danger')
