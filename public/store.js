@@ -1,10 +1,12 @@
 $(document).ready(function () {
 
-    if (document.readyState == 'loading') {
-        document.addEventListener('DOMContentLoaded', ready)
-    } else {
-        ready()
-    }
+    // if (document.readyState == 'loading') {
+    //     document.addEventListener('DOMContentLoaded', ready)
+    // } else {
+    //     ready()
+    // }
+    $(".zipAlert, .zipAlert2, .formdiv, .purchDiv, .zipCodeBrowser, .zonasEntrega, .zonaNotFound").hide();
+    $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6, .verPropuesta1, .verPropuesta3, .verPropuesta4, .verPropuesta5, .verPropuesta6, .verProp1, .verProp, .verProp3, .verProp4, .verProp6, .btnPre5").hide();
 
     // Función para botones de imágen
     $(".btn1first").on("click", function () {
