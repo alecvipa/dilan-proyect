@@ -115,53 +115,77 @@ $(document).ready(function () {
         $(".btnAgre6").html("AGREGAR");
 
     });
-    // $(".btnAgre2").on("click", function(){
-    //     $(".btnAgre2").html("AGREGADA");
-    //     $('.btnAgre2').prop('disabled', true);
-    //     $('.btnAgre3').prop('disabled', false);
-    //     $('.btnAgre4').prop('disabled', false);
-    //     $('.btnAgre5').prop('disabled', false);
-    //     $('.btnAgre6').prop('disabled', false);
-    //     $('.btnAgre1').prop('disabled', false);
+    $(".btnAgre2").on("click", function(){
+        $(".btnAgre2").html("AGREGADA");
+        $('.btnAgre2').prop('disabled', true);
+        $('.btnAgre3').prop('disabled', false);
+        $('.btnAgre4').prop('disabled', false);
+        $('.btnAgre5').prop('disabled', false);
+        $('.btnAgre6').prop('disabled', false);
+        $('.btnAgre1').prop('disabled', false);
+        $(".btnAgre1").html("AGREGAR");
+        $(".btnAgre3").html("AGREGAR");
+        $(".btnAgre4").html("AGREGAR");
+        $(".btnAgre5").html("AGREGAR");
+        $(".btnAgre6").html("AGREGAR");
+    });
+    $(".btnAgre3").on("click", function(){
+        $(".btnAgre3").html("AGREGADA");
+        $('.btnAgre3').prop('disabled', true);
+        $('.btnAgre4').prop('disabled', false);
+        $('.btnAgre5').prop('disabled', false);
+        $('.btnAgre6').prop('disabled', false);
+        $('.btnAgre1').prop('disabled', false);
+        $('.btnAgre2').prop('disabled', false);
+        $(".btnAgre2").html("AGREGAR");
+        $(".btnAgre1").html("AGREGAR");
+        $(".btnAgre4").html("AGREGAR");
+        $(".btnAgre5").html("AGREGAR");
+        $(".btnAgre6").html("AGREGAR");
+    });
+    $(".btnAgre4").on("click", function(){
+        $(".btnAgre4").html("AGREGADA");
+        $('.btnAgre4').prop('disabled', true);
+        $('.btnAgre1').prop('disabled', false);
+        $('.btnAgre2').prop('disabled', false);
+        $('.btnAgre3').prop('disabled', false);
+        $('.btnAgre5').prop('disabled', false);
+        $('.btnAgre6').prop('disabled', false);
+        $(".btnAgre2").html("AGREGAR");
+        $(".btnAgre3").html("AGREGAR");
+        $(".btnAgre1").html("AGREGAR");
+        $(".btnAgre5").html("AGREGAR");
+        $(".btnAgre6").html("AGREGAR");
 
-    // });
-    // $(".btnAgre3").on("click", function(){
-    //     $(".btnAgre3").html("AGREGADA");
-    //     $('.btnAgre3').prop('disabled', true);
-    //     $('.btnAgre4').prop('disabled', false);
-    //     $('.btnAgre5').prop('disabled', false);
-    //     $('.btnAgre6').prop('disabled', false);
-    //     $('.btnAgre1').prop('disabled', false);
-    //     $('.btnAgre2').prop('disabled', false);
-    // });
-    // $(".btnAgre4").on("click", function(){
-    //     $(".btnAgre4").html("AGREGADA");
-    //     $('.btnAgre4').prop('disabled', true);
-    //     $('.btnAgre1').prop('disabled', false);
-    //     $('.btnAgre2').prop('disabled', false);
-    //     $('.btnAgre3').prop('disabled', false);
-    //     $('.btnAgre5').prop('disabled', false);
-    //     $('.btnAgre6').prop('disabled', false);
-
-    // });
-    // $(".btnAgre5").on("click", function(){
-    //     $(".btnAgre5").html("AGREGADA");
-    //     $('.btnAgre5').prop('disabled', true);
-    //     $('.btnAgre1').prop('disabled', false);
-    //     $('.btnAgre2').prop('disabled', false);
-    //     $('.btnAgre3').prop('disabled', false);
-    //     $('.btnAgre4').prop('disabled', false);
-    //     $('.btnAgre6').prop('disabled', false);
-    // });
-    // $(".btnAgre6").on("click", function(){
-    //     $(".btnAgre6").html("AGREGADA");
-    //     $('.btnAgre6').prop('disabled', true);
-    //     $('.btnAgre1').prop('disabled', false);
-    //     $('.btnAgre2').prop('disabled', false);
-    //     $('.btnAgre3').prop('disabled', false);
-    //     $('.btnAgre4').prop('disabled', false);
-    //     $('.btnAgre5').prop('disabled', false);
-    // });
+    });
+    $(".btnAgre5").on("click", function(){
+        $(".btnAgre5").html("AGREGADA");
+        $('.btnAgre5').prop('disabled', true);
+        $('.btnAgre1').prop('disabled', false);
+        $('.btnAgre2').prop('disabled', false);
+        $('.btnAgre3').prop('disabled', false);
+        $('.btnAgre4').prop('disabled', false);
+        $('.btnAgre6').prop('disabled', false);
+        $(".btnAgre2").html("AGREGAR");
+        $(".btnAgre3").html("AGREGAR");
+        $(".btnAgre4").html("AGREGAR");
+        $(".btnAgre1").html("AGREGAR");
+        $(".btnAgre6").html("AGREGAR");
+    });
+    $(".btnAgre6").on("click", function(){
+        $(".btnAgre6").html("AGREGADA");
+        $('.btnAgre6').prop('disabled', true);
+        $('.btnAgre1').prop('disabled', false);
+        $('.btnAgre2').prop('disabled', false);
+        $('.btnAgre3').prop('disabled', false);
+        $('.btnAgre4').prop('disabled', false);
+        $('.btnAgre5').prop('disabled', false);
+        $(".btnAgre2").html("AGREGAR");
+        $(".btnAgre3").html("AGREGAR");
+        $(".btnAgre4").html("AGREGAR");
+        $(".btnAgre5").html("AGREGAR");
+        $(".btnAgre1").html("AGREGAR");
+    });
 
     // function ready() {
         var removeCartItemButtons = document.getElementsByClassName('btn-danger')
