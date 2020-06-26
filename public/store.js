@@ -101,7 +101,7 @@ $(document).ready(function () {
     $(".unit5Premium, .unit6Premium").hide();
     
 
-    function ready() {
+    // function ready() {
         var removeCartItemButtons = document.getElementsByClassName('btn-danger')
         for (var i = 0; i < removeCartItemButtons.length; i++) {
             var button = removeCartItemButtons[i]
@@ -121,7 +121,7 @@ $(document).ready(function () {
         }
 
         document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
-    }
+    // }
 
     var stripeHandler = StripeCheckout.configure({
         key: stripePublicKey,
