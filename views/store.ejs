@@ -127,7 +127,7 @@
                 <div class="shop-items col text-center">
                     <% items.experiencias.forEach(function(item){ %>
                     <div class="shop-item" data-item-id="<%= item.id %>">
-                        <img class="shop-item-image" src="Images/<%= item.imgName %>" class="pointer">
+                        <img class="shop-item-image pointer" src="Images/<%= item.imgName %>" onclick="unit<%= item.id %>Wow()>
                         <div class="shop-item-details">
                             <!-- <div class="col-4">
                                 <span class="shop-item-price">$<%= item.price / 100 %></span>
