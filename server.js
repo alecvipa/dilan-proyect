@@ -190,7 +190,7 @@ app.post("/ajax/email", function (request, response) {
   var htmlBody = `<h2>Solicitud de pedido</h2><p>Nombre: ${request.body.name}</p><p> Correo electrónico: <a href='mailto: ${request.body.email}'>${request.body.email}</a></p><p>Telefono de contacto: ${request.body.number}</p><p>Dirección de entrega: ${request.body.message}</p><p>Día de entrega: ${request.body.date}</p><p>Hora de entrega: ${request.body.hour}</p><p>Quieren novedades: ${request.body.checkbox}</p><p>Pedido: ${request.body.pedido}</p><p>Es para regalo: ${request.body.giftCheckbox}</p><p>Mensaje de regalo: ${request.body.giftMessage}</p>`;
   var mail = {
     from: '"Team: thewowbox.mx" <contacto@thewowbox.mx>',
-    to: 'hebrit_626@hotmail.com',
+    to: 'contacto@thewowbox.mx',
     subject: '¡Alguien te ha hecho un pedido!',
     html: htmlBody
   };
