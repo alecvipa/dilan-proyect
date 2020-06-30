@@ -56,6 +56,20 @@ app.get('/', function (req, res) {
   })
 });
 
+app.get('*', function (req, res) {
+  fs.readFile('items.json', function (error, data) {
+    if (error) {
+      res.status(500).end()
+    } else {
+      res.redirect(targetBaseUrl);
+      // res.render('construction.ejs', {
+      //   stripePublicKey: stripePublicKey,
+      //   items: JSON.parse(data)
+      // });
+    }
+  })
+});
+
 app.get('/sucess', function (req, res) {
   fs.readFile('items.json', function (error, data) {
     if (error) {
