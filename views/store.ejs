@@ -6,6 +6,10 @@
     <meta name="description"
         content="Si el aislamiento arruinó los planes, no todo está perdido. thewowbox.mx tiene las mejores experiencias en casa.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
     <!-- Ensures optimal rendering on mobile devices. -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
     <link rel="stylesheet" href="styles.css" />
@@ -81,9 +85,11 @@
                                     style="color: rgb(187, 186, 186);" class="font">CONTÁCTANOS POR
                                     WHATSAPP</span></i></a>
                     </div>
-                    <div class="col-sm"><a href="https://www.facebook.com/thewowboxmx-111968760555517/" target="_blank" rel="noopener noreferrer"><i
-                                class="fab fa-facebook fa-w-14 fa-lg" style="color: #5482e6; "></i></a>&nbsp; &nbsp;<a
-                            href="https://www.instagram.com/thewowbox.mx/?hl=es-la" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram fa-w-14 fa-lg"
+                    <div class="col-sm"><a href="https://www.facebook.com/thewowboxmx-111968760555517/" target="_blank"
+                            rel="noopener noreferrer"><i class="fab fa-facebook fa-w-14 fa-lg"
+                                style="color: #5482e6; "></i></a>&nbsp; &nbsp;<a
+                            href="https://www.instagram.com/thewowbox.mx/?hl=es-la" target="_blank"
+                            rel="noopener noreferrer"><i class="fab fa-instagram fa-w-14 fa-lg"
                                 style="color: #ca364a;"></i></a>
                     </div>
                 </div>
@@ -121,7 +127,8 @@
         <div class="row">
             <section class="container content-section" id="experienciasCards">
                 <div class="eligeExperienciaTitle badgeWow">
-                    <h2><span class="badge badge-pill badge-success">Envíos en Ciudad de México - consulta la cobertura</span></h2>
+                    <h2><span class="badge badge-pill badge-success">Envíos en Ciudad de México - consulta la
+                            cobertura</span></h2>
                     <br>
                     <br>
                     <h2 class="section-header">ELIGE UNA EXPERIENCIA</h2>
@@ -130,7 +137,8 @@
                 <div class="shop-items col text-center">
                     <% items.experiencias.forEach(function(item){ %>
                     <div class="shop-item" data-item-id="<%= item.id %>">
-                        <img class="shop-item-image pointer" src="Images/<%= item.imgName %>" onclick="unit<%= item.id %>Wow()">
+                        <img class="shop-item-image pointer" src="Images/<%= item.imgName %>"
+                            onclick="unit<%= item.id %>Wow()">
                         <div class="shop-item-details">
                             <!-- <div class="col-4">
                                 <span class="shop-item-price">$<%= item.price / 100 %></span>
@@ -142,7 +150,8 @@
                         </div>
                         <div class="moreDetails container text-left ">
                             <span class="shop-item-title text-left titleProdResponsiveness"><%= item.name %></span>
-                            <h4 class="pointer"><span class="badge badge-secondary verPremium<%= item.id %> titleProdResponsiveness"
+                            <h4 class="pointer"><span
+                                    class="badge badge-secondary verPremium<%= item.id %> titleProdResponsiveness"
                                     style="background-color: goldenrod; " onclick="unit<%= item.id %>Premiums()"><i
                                         class="fas fa-gift"
                                         style="color: gold; padding-top: 3%; padding-bottom: 3%;"></i> Ver Premium
@@ -151,12 +160,14 @@
                                     style="color: lightsteelblue;" onclick="location.href='#wowBoxes';"></i>
                                 DETALLES</button> -->
                                 <!-- <button class="btn btn-primary shop-item-button" type="button">AGREGAR</button> -->
-                                <span class="badge badge-secondary bg-primary titleProdResponsiveness" onclick="unit<%= item.id %>Wow()"
+                                <span class="badge badge-secondary bg-primary titleProdResponsiveness"
+                                    onclick="unit<%= item.id %>Wow()"
                                     style="padding-top: 2.5% !important; padding-bottom: 2.5% !important;"><i
                                         class="fas fa-gift" style="color: skyblue;"></i> Ver Wow Box</span></h4>
                             <div class="text-left">
                                 <br>
-                                <p style="width: 21rem; font-size: 15px;" class="corpDescription"><%=item.brief%> <br> <br> Desde
+                                <p style="width: 21rem; font-size: 15px;" class="corpDescription"><%=item.brief%> <br>
+                                    <br> Desde
                                     $<%=item.price/100%> y entregado en
                                     la puerta de tu casa
                                 </p>
@@ -183,12 +194,14 @@
                             </div>
                             <div class="carrosuel">
                                 <img src="Images/<%=item.imgName2%>"
-                                    class="imgCarrousel1 pointer rounded float-left imgCarrousel btn<%= item.id %>first" alt="img" id="carr1">
+                                    class="imgCarrousel1 pointer rounded float-left imgCarrousel btn<%= item.id %>first"
+                                    alt="img" id="carr1">
                                 <img src="Images/<%=item.imgName3%>"
                                     class="rounded pointer float-left imgCarrousel btn<%= item.id %>second" alt="img"
                                     id="carr2">
                                 <img src="Images/<%=item.imgName4%>"
-                                    class="rounded pointer float-left imgCarrousel btn<%= item.id %>third" alt="img" id="carr3">
+                                    class="rounded pointer float-left imgCarrousel btn<%= item.id %>third" alt="img"
+                                    id="carr3">
                             </div>
                         </div>
                         <div class="col-md-6 bodyCards">
@@ -229,7 +242,8 @@
                                         calificaron
                                         con 5 estrellas esta experiencia</span></i>
                                 </div>
-                                <button class="btn pointer btn-primary shop-item-button btnPreview btnAgre<%= item.id %>"
+                                <button
+                                    class="btn pointer btn-primary shop-item-button btnPreview btnAgre<%= item.id %>"
                                     type="button">AGREGAR</button>
                                 <button class="btn pointer btn-success nxt1" type="button"
                                     style="font-size: 1rem !important; margin-top: 3%;">DATOS DE LA
@@ -282,7 +296,7 @@
                                         con 5 estrellas esta experiencia</span></i>
                                 </div>
                                 <div class="col-md-6 text-right pointer">
-                                   <a href="/contacto">Compartir mi opinión</a>
+                                    <a href="/contacto">Compartir mi opinión</a>
                                 </div>
                             </div>
                         </div>
@@ -300,7 +314,8 @@
                     <br>
                     <div class="row">
                         <div class="col pointer">
-                            <h4>¡Se el primero en dejarnos tu opinión! <span><a href="/contacto">Compartir mi opinión</a></span></h4>
+                            <h4>¡Se el primero en dejarnos tu opinión! <span><a href="/contacto">Compartir mi
+                                        opinión</a></span></h4>
                             <!-- <h5>La mejor experiencia que he tenido</h5>
                             <h6 style="color: grey;">Rosa Rodríguez</h6>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem possimus quia
@@ -349,7 +364,8 @@
                             </div>
                             <div class="carrosuel pointer">
                                 <img src="Images/<%=item.imgName2%>"
-                                    class="imgCarrousel1 rounded float-left imgCarrousel btn<%= item.id %>first" alt="img" id="carr1">
+                                    class="imgCarrousel1 rounded float-left imgCarrousel btn<%= item.id %>first"
+                                    alt="img" id="carr1">
                                 <img src="Images/<%=item.imgName3%>"
                                     class="rounded float-left imgCarrousel btn<%= item.id %>second" alt="img"
                                     id="carr2">
@@ -396,7 +412,8 @@
                                         calificaron
                                         con 5 estrellas esta experiencia</span></i>
                                 </div>
-                                <button class="btn pointer btn-primary shop-item-button btnPreview btnAgre<%= item.id %>"
+                                <button
+                                    class="btn pointer btn-primary shop-item-button btnPreview btnAgre<%= item.id %>"
                                     type="button">AGREGAR</button>
                                 <button class="btn pointer btn-success nxt1" type="button"
                                     style="font-size: 1rem !important; margin-top: 3%;">DATOS DE LA
@@ -447,7 +464,7 @@
                                         con 5 estrellas esta experiencia</span></i>
                                 </div>
                                 <div class="col-md-6 text-right pointer">
-                                   <a href="/contacto">Compartir mi opinión</a>
+                                    <a href="/contacto">Compartir mi opinión</a>
                                 </div>
                             </div>
                         </div>
@@ -465,7 +482,8 @@
                     <br>
                     <div class="row">
                         <div class="col pointer">
-                            <h4>¡Se el primero en dejarnos tu opinión! <span><a href="/contacto">Compartir mi opinión</a></span></h4>
+                            <h4>¡Se el primero en dejarnos tu opinión! <span><a href="/contacto">Compartir mi
+                                        opinión</a></span></h4>
                             <!-- <h5>La mejor experiencia que he tenido</h5>
                             <h6 style="color: grey;">Rosa Rodríguez</h6>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem possimus quia
@@ -597,8 +615,8 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <button type="button" class="btn btn-warning" onclick="location.href='/contacto';">¿No encontraste tu zona? contáctanos para ver alternativas en CDMX <i
-                        class="fas fa-phone-alt"></i></button>
+                <button type="button" class="btn btn-warning" onclick="location.href='/contacto';">¿No encontraste tu
+                    zona? contáctanos para ver alternativas en CDMX <i class="fas fa-phone-alt"></i></button>
             </div>
             <div class="col-md-4"></div>
 
@@ -685,12 +703,17 @@
                                         recibir novedades de thewowbox.mx</label>
                                 </section>
                                 <br>
-                                <button type="submit" class="btn btn-primary btn-lg submitFormBtn pointer">Enviar</button>
+                                <button type="submit"
+                                    class="btn btn-primary btn-lg submitFormBtn pointer">Enviar</button>
                                 <br>
                                 <br>
                                 <section class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck2" name="checkboxPolicy" required>
-                                    <label class="form-check-label submitFormBtn" for="exampleCheck2"> Acepto <span><a href="/privacy" target="_blank" rel="noopener noreferrer">política de privacidad</a></span> & <span><a href="/terminos" target="_blank" rel="noopener noreferrer">términos y condiciones</a></span></label>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck2"
+                                        name="checkboxPolicy" required>
+                                    <label class="form-check-label submitFormBtn" for="exampleCheck2"> Acepto <span><a
+                                                href="/privacy" target="_blank" rel="noopener noreferrer">política de
+                                                privacidad</a></span> & <span><a href="/terminos" target="_blank"
+                                                rel="noopener noreferrer">términos y condiciones</a></span></label>
                                 </section>
                                 <br>
 
@@ -853,7 +876,7 @@
             $(".zipCodeBrowser").show(1000)
             // $(".btn-purchase").prop('disabled', false);
         });
-        
+
         $(".btn-payPal").on("click", function () {
             $(".zipCodeBrowser").hide();
             paypal.Buttons({
@@ -904,7 +927,7 @@
             }).render('#paypal-button-container');
             //This function displays Smart Payment Buttons on your web page.
             $(".btn-payPal").hide();
-            
+
         })
 
         $("#descubrirbtn").on("click", function (event) {
