@@ -10,41 +10,72 @@ $(document).ready(function () {
 
     // Función para botones de imágen
     $(".btn1first").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/cVinosDos.jpg)");
+        $('.imgPre').css("background-image", "url(Images/cVinosUno.jpg)");
     });
     $(".btn1second").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/cVinosTres.jpg)");
+        $('.imgPre').css("background-image", "url(Images/cVinosDos.jpg)");
     });
     $(".btn1third").on("click", function () {
+        $('.imgPre').css("background-image", "url(Images/cVinosTres.jpg)");
+    });
+    $(".btn1four").on("click", function () {
         $('.imgPre').css("background-image", "url(Images/cVinosCuatro.jpg)");
     });
+
+
     $(".btn2first").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/cCervezaDos.jpg)");
+        $('.imgPre').css("background-image", "url(Images/cCervezaUno.jpg)");
     });
     $(".btn2second").on("click", function () {
         $('.imgPre').css("background-image", "url(Images/cCervezaTres.jpg)");
     });
     $(".btn2third").on("click", function () {
+        $('.imgPre').css("background-image", "url(Images/cCervezaDos.jpg)");
+    });
+    $(".btn2four").on("click", function () {
         $('.imgPre').css("background-image", "url(Images/cCervezaCuatro.jpg)");
     });
+
+
     $(".btn3first").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/nJuegosDos.jpg)");
+        $('.imgPre').css("background-image", "url(Images/nJuegosUno.jpg)");
     });
     $(".btn3second").on("click", function () {
         $('.imgPre').css("background-image", "url(Images/nJuegosTres.jpg)");
     });
     $(".btn3third").on("click", function () {
+        $('.imgPre').css("background-image", "url(Images/nJuegosDos.jpg)");
+    });
+    $(".btn3four").on("click", function () {
         $('.imgPre').css("background-image", "url(Images/nJuegosCuatro.jpg)");
     });
+
+
     $(".btn4first").on("click", function () {
         $('.imgPre').css("background-image", "url(Images/hCelebrarUno.jpg)");
     });
     $(".btn4second").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/hCelebrarDos.jpg)");
-    });
-    $(".btn4third").on("click", function () {
         $('.imgPre').css("background-image", "url(Images/hCelebrarTres.jpg)");
     });
+    $(".btn4third").on("click", function () {
+        $('.imgPre').css("background-image", "url(Images/hCelebrarDos.jpg)");
+    });
+    $(".btn4four").hide();
+
+    $(".btn5first").on("click", function () {
+        $('.imgPre').css("background-image", "url(Images/cCervezaUno.jpg)");
+    });
+    $(".btn5second").on("click", function () {
+        $('.imgPre').css("background-image", "url(Images/cCervezaTres.jpg)");
+    });
+    $(".btn5third").on("click", function () {
+        $('.imgPre').css("background-image", "url(Images/cCervezaDos.jpg)");
+    });
+    $(".btn5four").on("click", function () {
+        $('.imgPre').css("background-image", "url(Images/cCervezaCuatro.jpg)");
+    });
+
+
     $(".btn6first").on("click", function () {
         $('.imgPre').css("background-image", "url(Images/hCelebrarUno.jpg)");
     });
@@ -54,6 +85,7 @@ $(document).ready(function () {
     $(".btn6third").on("click", function () {
         $('.imgPre').css("background-image", "url(Images/hCelebrarTres.jpg)");
     });
+    $(".btn6third").hide();
     
     $(".btnRegresar").on("click", function () {
         $("#experienciasCards").show();
