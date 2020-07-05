@@ -502,6 +502,9 @@ body {
         padding-top: 11%;
         margin-bottom: -12% !important;
     } 
+    .bannerTemporada{
+        height: 1100px ;
+    }
     /* .bannerTemporada{
         /* background-image: url("Images/bannerMovil.jpg");
         background-position: center;
@@ -537,6 +540,9 @@ body {
 
 }
 @media (max-width: 400px) {
+    .bannerTemporada{
+        height: 1100px ;
+    }
     /* .bannerTemporada{ */
         /* background-image: url("Images/bannerMovil.jpg");
         background-position: center;
