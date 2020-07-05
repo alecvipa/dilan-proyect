@@ -28,12 +28,37 @@ html, body {
 .pointer {cursor: pointer;}
 
 .bannerTemporada{
-    background-image: url("Images/bannerPapa.jpg");
+    background-image: url("Images/WEB1.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 400px;
+    height: 900px;
+    background-attachment: fixed;
+    transition: 0s linear;
+    transition-property: background-position;
     /* margin-bottom: 6%; */
+}
+#carouselExampleControls{
+    width: 15rem;
+}
+.coloresBanner{
+    height: 17px !important;
+    width: 18rem;
+    margin-left: 29%;
+    margin-top: -5%;
+}
+.textBiveCasa{
+    margin-top: 10%;
+    font-size: 2rem;
+}
+.verticalBannerTitle{
+    writing-mode: vertical-rl;
+    color: #54E8FC;
+    font-size: 3rem;
+}
+.experBannerTitleNew{
+    font-size: 4rem !important;
+    margin-top: 5%;
 }
 .zipBrowserTitle{
     padding-top: 2%;
@@ -195,6 +220,18 @@ body {
      background-repeat: no-repeat;
      background-size: cover;
      height: 40rem;
+}
+.barraColores{
+    background-image: url("Images/barra.png");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: 10px;
+}
+.brandingLogo{
+    height: 18rem !important;
+    margin-bottom: -33%;
+    margin-top: -26%;
 }
 /* .bodySucess{
     margin-bottom: 30%;
@@ -410,6 +447,23 @@ body {
     /* margin-left: 15%; */
 }
 @media (min-width: 401px) and (max-width: 768px) {
+    #carouselExampleControls{
+        margin-left: 18%;
+    }
+    .coloresBanner{
+        width: 13rem;
+        margin-left: 6%;
+    }
+    .textBiveCasa{
+        font-size: 1.5rem;
+    }
+    .experBannerTitleNew{
+        font-size: 2rem !important;
+    }
+    .verticalBannerTitle{
+        margin-left: 70%;
+        font-size: 2rem;
+    }
     .shop-item-image{
         height: 20rem !important;
     }
@@ -447,14 +501,14 @@ body {
     .titleZonaE{
         padding-top: 11%;
         margin-bottom: -12% !important;
-    }
-    .bannerTemporada{
-        background-image: url("Images/bannerMovil.jpg");
+    } 
+    /* .bannerTemporada{
+        /* background-image: url("Images/bannerMovil.jpg");
         background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
-        height: 400px;
-    }
+        background-size: cover; */
+        /* height: 600px;
+    } */ 
     .cart-row, .btn-danger{
         font-size: 6pt !important;
     }
@@ -483,15 +537,32 @@ body {
 
 }
 @media (max-width: 400px) {
-    .bannerTemporada{
-        background-image: url("Images/bannerMovil.jpg");
+    /* .bannerTemporada{ */
+        /* background-image: url("Images/bannerMovil.jpg");
         background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
-        height: 350px;
+        background-size: cover; */
+        /* height: 600px; */
+    /* } */
+    #carouselExampleControls{
+        margin-left: 11%;
     }
     .shop-item-image {
         height: 280px;
+    }
+    .coloresBanner{
+        width: 13rem;
+        margin-left: 6%;
+    }
+    .textBiveCasa{
+        font-size: 1.5rem;
+    }
+    .experBannerTitleNew{
+        font-size: 2rem !important;
+    }
+    .verticalBannerTitle{
+        margin-left: 70%;
+        font-size: 2rem;
     }
     body{
         max-width: 576px;

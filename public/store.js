@@ -7,7 +7,6 @@ $(document).ready(function () {
     // }
     $(".zipAlert, .zipAlert2, .formdiv, .purchDiv, .zipCodeBrowser, .zonasEntrega, .zonaNotFound").hide();
     $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6, .verPropuesta1, .verPropuesta3, .verPropuesta4, .verPropuesta5, .verPropuesta6, .verProp1, .verProp, .verProp3, .verProp4, .verProp6, .btnPre5").hide();
-
     // Función para botones de imágen
     $(".btn1first").on("click", function () {
         $('.imgPre').css("background-image", "url(Images/cVinosUno.jpg)");
@@ -22,6 +21,13 @@ $(document).ready(function () {
         $('.imgPre').css("background-image", "url(Images/cVinosCuatro.jpg)");
     });
 
+    $('.carousel').carousel({
+        interval: 1500
+      })
+
+    // $(window).scroll(function () {
+    //     $(".bannerTemporada").css("background-position","50% " + ($(this).scrollTop() / 2) + "px");
+    // });
 
     $(".btn2first").on("click", function () {
         $('.imgPre').css("background-image", "url(Images/cCervezaUno.jpg)");
