@@ -10,6 +10,9 @@
 body{
     position: relative;
 }
+.purpleArthurBg{
+    background-color: #8454FC !important;
+}
 .italica{
     font-style: italic;
 }
@@ -108,7 +111,7 @@ html, body {
 .main-footer {
     color: white;
     padding: .25em 0;
-    margin-top: 8%;
+    /* margin-top: 8%; */
 }
 
 .main-footer-container {
@@ -232,6 +235,13 @@ body {
      background-repeat: no-repeat;
      background-size: cover;
      height: 10px;
+}
+.collage{
+    background-image: url("Images/COLLAGE.jpg");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: 40rem;
 }
 .brandingLogo{
     height: 18rem !important;
@@ -455,6 +465,9 @@ body {
     #carouselExampleControls{
         margin-left: 18%;
     }
+    .btnContactWarning{
+        font-size: 14px !important;
+    }
     .coloresBanner{
         width: 13rem;
         margin-left: 6%;
@@ -547,6 +560,13 @@ body {
     .textBiveCasa{
         margin-right: 20%;
     }
+    .completarPedidoTitle{
+        font-size: 20px;
+    }
+    .collage{
+        height: 15rem;
+        background-position: unset;
+    }
 
 
 }
@@ -560,6 +580,10 @@ body {
     /* } */
     #carouselExampleControls{
         margin-left: 11%;
+    }
+    .collage{
+        height: 15rem;
+        background-position: unset;
     }
     .shop-item-image {
         height: 280px;
@@ -640,5 +664,11 @@ body {
     }
     .textBiveCasa{
         margin-right: 20%;
+    }
+    .btnContactWarning{
+        font-size: 14px !important;
+    }
+    .completarPedidoTitle{
+        font-size: 20px;
     }
 }
