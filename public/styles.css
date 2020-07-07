@@ -13,6 +13,9 @@ body{
 .purpleArthurBg{
     background-color: #8454FC !important;
 }
+.purpleArthurBg2{
+    background-color: #8454FC !important;
+}
 .italica{
     font-style: italic;
 }
@@ -24,6 +27,11 @@ body{
 }
 .blueArthur{
     color: #54E8FC !important;
+}
+.expeHashtag{
+    font-size: 5rem;
+    margin-bottom: 5%;
+    margin-top: 5%;
 }
 
 html, body {
@@ -567,6 +575,12 @@ body {
         height: 15rem;
         background-position: unset;
     }
+    .expeHashtag{
+        font-size: 20px;
+    }
+    .sigenosTitleHash{
+        font-size: 35px !important;
+    }
 
 
 }
@@ -580,6 +594,12 @@ body {
     /* } */
     #carouselExampleControls{
         margin-left: 11%;
+    }
+    .sigenosTitleHash{
+        font-size: 35px !important;
+    }
+    .expeHashtag{
+        font-size: 20px;
     }
     .collage{
         height: 15rem;
