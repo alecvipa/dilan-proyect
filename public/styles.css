@@ -103,7 +103,7 @@ html, body {
 .section-header {
     font-weight: normal;
     text-align: center;
-    font-size: 6.5em;
+    font-size: 3.5em;
 }
 .formdiv{
     height: 1280px;
@@ -542,9 +542,9 @@ body {
         margin-left: 5%;
         font-size: 6pt;
     }
-    .section-header{
+    /* .section-header{
         font-size: 2rem !important
-    }
+    } */
     .zipBrowserTitle, #descubrirbtn, .btnCodigoFalse{
         font-size: 0.7rem !important;
     }
@@ -572,14 +572,25 @@ body {
         font-size: 20px;
     }
     .collage{
-        height: 15rem;
-        background-position: unset;
+        height: 31rem;
+        background-image: url("Images/COLLAGE-3.jpg");
     }
     .expeHashtag{
         font-size: 20px;
     }
     .sigenosTitleHash{
         font-size: 35px !important;
+    }
+    .bannerTemporada{
+        background-image: url("Images/WEB1.jpg");
+        background-position: -32px;
+        background-repeat: space;
+        background-size: cover;
+        height: 900px;
+        background-attachment: fixed;
+        transition: 0s linear;
+        transition-property: background-position;
+        /* margin-bottom: 6%; */
     }
 
 
@@ -595,6 +606,17 @@ body {
     #carouselExampleControls{
         margin-left: 11%;
     }
+    .bannerTemporada{
+        background-image: url("Images/WEB1.jpg");
+        background-position: -32px;
+        background-repeat: space;
+        background-size: cover;
+        height: 900px;
+        background-attachment: fixed;
+        transition: 0s linear;
+        transition-property: background-position;
+        /* margin-bottom: 6%; */
+    }
     .sigenosTitleHash{
         font-size: 35px !important;
     }
@@ -602,8 +624,8 @@ body {
         font-size: 20px;
     }
     .collage{
-        height: 15rem;
-        background-position: unset;
+        height: 31rem;
+        background-image: url("Images/COLLAGE-3.jpg");
     }
     .shop-item-image {
         height: 280px;
