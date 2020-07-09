@@ -599,6 +599,9 @@ body {
         transition-property: background-position;
         /* margin-bottom: 6%; */
     }
+    .mediaCenter{
+        text-align: center;
+    }
 
 
 }
@@ -612,6 +615,9 @@ body {
     /* } */
     #carouselExampleControls{
         margin-left: 11%;
+    }
+    .mediaCenter{
+        text-align: center;
     }
     .bannerTemporada{
         background-image: url("Images/WEB1.jpg");
