@@ -28,6 +28,13 @@ body{
 .blueArthur{
     color: #54E8FC !important;
 }
+.googleTitulo{
+    font-family: 'Barlow Condensed', sans-serif;
+}
+.googleSubTitulo{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Economica', sans-serif;
+}
 .expeHashtag{
     font-size: 5rem;
     margin-bottom: 5%;
