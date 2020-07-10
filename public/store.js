@@ -12,10 +12,10 @@ $(document).ready(function () {
         $('.imgPre').css("background-image", "url(Images/cVinosUno.jpg)");
     });
     $(".btn1second").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/cVinosDos.jpg)");
+        $('.imgPre').css("background-image", "url(Images/cVinosTres.jpg)");
     });
     $(".btn1third").on("click", function () {
-        $('.imgPre').css("background-image", "url(Images/cVinosTres.jpg)");
+        $('.imgPre').css("background-image", "url(Images/cVinosDos.jpg)");
     });
     $(".btn1four").on("click", function () {
         $('.imgPre').css("background-image", "url(Images/cVinosCuatro.jpg)");
