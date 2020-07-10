@@ -22,7 +22,7 @@ $(document).ready(function () {
     });
 
     $('.carousel').carousel({
-        interval: 1500
+        interval: 2000
       })
 
     // $(window).scroll(function () {
@@ -94,7 +94,7 @@ $(document).ready(function () {
     $(".btn6third").hide();
     
     $(".btnRegresar").on("click", function () {
-        $("#experienciasCards").show();
+        $("#experienciasCards, .bannerTemporada, .barraColores").show();
         $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6, .zipCodeBrowser, .zipAlert, .zipAlert2, .formdiv, .purchDiv, .unit5Premium, .unit6Premium, .zonasEntrega, .zonaNotFound").hide();
     });
 

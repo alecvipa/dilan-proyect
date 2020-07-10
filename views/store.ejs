@@ -69,7 +69,8 @@
     </script>
     <script src="store.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Economica&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Economica&display=swap"
+        rel="stylesheet">
 </head>
 
 <body data-spy='scroll' data-target="#selector" data-offset='50'>
@@ -153,12 +154,19 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-7">
                     <div class="row">
-                        <div class="col-md-8">
-                            <h1 class="text-white experBannerTitleNew">EXPERIENCIAS <br> QUE CONECTAN</h1>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h1 class="text-white experBannerTitleNew">EXPERIENCIAS <br> QUE CONECTAN</h1>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4 class="verticalBannerTitle">#TheWowBox</h4>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <h4 class="verticalBannerTitle">#TheWowBox</h4>
-                        </div>
+                        <!-- <div class="col-md-2">
+                            
+                        </div> -->
                     </div>
                 </div>
                 <div class="col-md-2 text-left">
@@ -236,18 +244,20 @@
                             <span class="shop-item-title text-left titleProdResponsiveness"><%= item.name %></span>
                             <h4 class="pointer"><span
                                     class="badge badge-secondary verPremium<%= item.id %> titleProdResponsiveness"
-                                    style="background-color: goldenrod; " onclick="unit<%= item.id %>Premiums()"><i
-                                        class="fas fa-gift"
-                                        style="color: gold; padding-top: 3%; padding-bottom: 3%;"></i> Ver Premium
-                                    Box</span>
+                                    style="background-color: #201c1c; color: #d4a41c; "
+                                    onclick="unit<%= item.id %>Premiums()"> Ver
+                                    Premium
+                                    Box <i class="fas fa-search"
+                                        style="color: #d4a41c; padding-top: 3%; padding-bottom: 3%;"></i></span>
                                 <!-- <button class="btn btn-light" id="detail<%= item.id %>" type="button"><i class="fas fa-eye"
                                     style="color: lightsteelblue;" onclick="location.href='#wowBoxes';"></i>
                                 DETALLES</button> -->
                                 <!-- <button class="btn btn-primary shop-item-button" type="button">AGREGAR</button> -->
-                                <span class="badge badge-secondary purpleArthurBg titleProdResponsiveness"
+                                <span class="badge badge-secondary blueBgBtnArthur titleProdResponsiveness"
                                     onclick="unit<%= item.id %>Wow()"
-                                    style="padding-top: 2.5% !important; padding-bottom: 2.5% !important;"><i
-                                        class="fas fa-gift" style="color: skyblue;"></i> Ver Wow Box</span></h4>
+                                    style="padding-top: 2.5% !important; padding-bottom: 2.5% !important; color: #3c5f78;">
+                                    Ver Wow Box
+                                    <i class="fas fa-search" style="color: #3c5f78;"></i></span></h4>
                             <div class="text-left">
                                 <br>
                                 <p style="width: 21rem; font-size: 15px;" class="corpDescription"><%=item.brief%> <br>
@@ -261,7 +271,7 @@
                     <% }) %>
                 </div>
                 <div class="center">
-                    <button class="btn btn-success nxt1 pointer" type="button">DATOS DE LA COMPRA</button>
+                    <button class="btn btn-success nxt1 pointer" type="button">IR A COMPRA</button>
                 </div>
             </section>
         </div>
@@ -294,8 +304,9 @@
                         <div class="col-md-6 bodyCards">
                             <h3>
                                 <br><span class="badge pointer badge-secondary verPremium<%= item.id %>"
-                                    style="background-color: goldenrod; " onclick="unit<%= item.id %>Premiums()"><i
-                                        class="fas fa-gift" style="color: gold;"></i> Ver Premium Box</span>
+                                    style="background-color: #201c1c; color: #d4a41c; "
+                                    onclick="unit<%= item.id %>Premiums()">Ver Premium Box <i class="fas fa-search"
+                                        style="color: #d4a41c; padding-top: 3%; padding-bottom: 3%;"></i></span>
                                 <br>
                                 <span class="badge pointer badge-secondary verPropuesta<%= item.id %>"
                                     style="background-color: goldenrod; " onclick="unit<%= item.id %>Propuesta()"><i
@@ -333,8 +344,8 @@
                                     class="btn pointer purpleArthurBg btn-primary shop-item-button btnPreview btnAgre<%= item.id %>"
                                     type="button">AGREGAR</button>
                                 <button class="btn pointer btn-success nxt1" type="button"
-                                    style="font-size: 1rem !important; margin-top: 3%;">DATOS DE LA
-                                    COMPRA</button>
+                                    style="font-size: 1rem !important; margin-top: 3%;">
+                                    COMPRAR</button>
                             </div>
                             <div class="desc1Exp2 container">
                                 <h4>Descripción</h4>
@@ -465,9 +476,9 @@
                         <div class="col-md-6 bodyCards">
 
                             <h3>
-                                <br><span class="badge pointer badge-secondary bg-primary btnPre<%= item.id %>"
-                                    onclick="unit<%= item.id %>Wow()"><i class="fas fa-gift"
-                                        style="color: skyblue;"></i> Ver Wow Box</span>
+                                <br><span class="badge pointer badge-secondary blueBgBtnArthur btnPre<%= item.id %>"
+                                    onclick="unit<%= item.id %>Wow()" style="color:#3c5f78;;"> Ver Wow Box <i
+                                        class="fas fa-search" style="color: #3c5f78;"></i></span>
                                 <br>
                                 <span class="badge pointer badge-secondary verProp<%= item.id %>"
                                     style="background-color: goldenrod; " onclick="unit<%= item.id %>Propuesta()"><i
@@ -505,8 +516,7 @@
                                     class="btn pointer btn-primary shop-item-button btnPreview btnAgre<%= item.id %>"
                                     type="button">AGREGAR</button>
                                 <button class="btn pointer btn-success nxt1" type="button"
-                                    style="font-size: 1rem !important; margin-top: 3%;">DATOS DE LA
-                                    COMPRA</button>
+                                    style="font-size: 1rem !important; margin-top: 3%;">COMPRAR</button>
                             </div>
                             <div class="desc1Exp2 container">
                                 <h4>Descripción</h4>
@@ -909,58 +919,59 @@
 
     </script>
     <script type="text/javascript">
+        // Scrolling
         function unit2Premiums() {
-            $(".unit1, .unit2, .unit3, .unit4, .unit6Premium, #experienciasCards").hide();
+            $(".unit1, .unit2, .unit3, .unit4, .unit6Premium, #experienciasCards, .bannerTemporada, .barraColores").hide();
             $(".unit5Premium").show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
+            $("html, body").animate({ scrollTop: 5 }, "slow");
             return false;
         };
         function unit4Premiums() {
-            $(".unit1, .unit2, .unit3, .unit4, .unit5Premium, #experienciasCards").hide();
+            $(".unit1, .unit2, .unit3, .unit4, .unit5Premium, #experienciasCards, .bannerTemporada, .barraColores").hide();
             $('.imgPre').css("background-image", "url(Images/hCelebrarUno.jpg)");
             $(".unit6Premium").show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
+            $("html, body").animate({ scrollTop: 5 }, "slow");
             return false;
         };
         function unit1Wow() {
-            $(".unit5Premium, .unit2, .unit3, .unit4, .unit6Premium, #experienciasCards").hide();
+            $(".unit5Premium, .unit2, .unit3, .unit4, .unit6Premium, #experienciasCards, .bannerTemporada, .barraColores").hide();
             $('.imgPre').css("background-image", "url(Images/cVinosUno.jpg)");
             $(".unit1").show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
+            $("html, body").animate({ scrollTop: 5 }, "slow");
             return false;
         };
         function unit2Wow() {
-            $(".unit1, .unit2Premium, .unit3, .unit4, .unit5Premium, .unit6Premium, #experienciasCards ").hide();
+            $(".unit1, .unit2Premium, .unit3, .unit4, .unit5Premium, .unit6Premium, #experienciasCards, .bannerTemporada, .barraColores ").hide();
             $('.imgPre').css("background-image", "url(Images/cCervezaUno.jpg)");
             $(".unit2").show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
+            $("html, body").animate({ scrollTop: 5 }, "slow");
             return false;
         };
         function unit4Wow() {
-            $(".unit1, .unit2, .unit3, .unit5Premium, .unit6Premium, #experienciasCards").hide();
+            $(".unit1, .unit2, .unit3, .unit5Premium, .unit6Premium, #experienciasCards, .bannerTemporada, .barraColores").hide();
             $('.imgPre').css("background-image", "url(Images/hCelebrarUno.jpg)");
             $(".unit4").show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
+            $("html, body").animate({ scrollTop: 5 }, "slow");
             return false;
         };
         function unit3Wow() {
-            $(".unit1, .unit2, .unit4, .unit5Premium, .unit6Premium, #experienciasCards").hide();
+            $(".unit1, .unit2, .unit4, .unit5Premium, .unit6Premium, #experienciasCards, .bannerTemporada, .barraColores").hide();
             $('.imgPre').css("background-image", "url(Images/nJuegosUno.jpg)");
             $(".unit3").show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
+            $("html, body").animate({ scrollTop: 5 }, "slow");
             return false;
         };
         function unit5Wow() {
-            $(".unit1, .unit5Premium,.unit6Premium, .unit3, .unit4, #experienciasCards ").hide();
+            $(".unit1, .unit5Premium,.unit6Premium, .unit3, .unit4, #experienciasCards, .bannerTemporada, .barraColores ").hide();
             $(".unit2").show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
+            $("html, body").animate({ scrollTop: 5 }, "slow");
             return false;
         };
         function unit6Wow() {
-            $(".unit1, .unit6Premium, .unit5Premium, .unit3, .unit2, #experienciasCards ").hide();
+            $(".unit1, .unit6Premium, .unit5Premium, .unit3, .unit2, #experienciasCards, .bannerTemporada, .barraColores ").hide();
             $('.imgPre').css("background-image", "url(Images/hCelebrarUno.jpg)");
             $(".unit4").show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
+            $("html, body").animate({ scrollTop: 5 }, "slow");
             return false;
         };
         function unit2Propuesta() {
