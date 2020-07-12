@@ -77,17 +77,21 @@ html, body {
 .textBiveCasa{
     margin-top: 10%;
     font-size: 2rem;
-    width: 97%;
+    width: 72%;
 }
 .verticalBannerTitle{
     writing-mode: vertical-rl;
     color: #54E8FC;
     font-size: 3rem;
+    margin-left: -55%;
+}
+.carouselCss{
+    margin-left: -54% !important;
 }
 .experBannerTitleNew{
     font-size: 5rem !important;
     margin-top: -2%;
-    margin-left: -17%;
+    margin-left: -58%;
 }
 .zipBrowserTitle{
     padding-top: 2%;
@@ -607,6 +611,9 @@ body {
     .mediaCenter{
         text-align: center;
     }
+    .carouselCss{
+        margin-left: 0% !important;
+    }
 
 
 }
@@ -620,6 +627,9 @@ body {
     /* } */
     #carouselExampleControls{
         margin-left: 11%;
+    }
+    .carouselCss{
+        margin-left: 0% !important;
     }
     .mediaCenter{
         text-align: center;
