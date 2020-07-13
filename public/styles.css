@@ -136,6 +136,11 @@ html, body {
     color: white;
     padding: .25em 0;
     /* margin-top: 8%; */
+    background-image: url("Images/FOODER.png");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: 40rem;
 }
 
 .main-footer-container {
@@ -614,6 +619,9 @@ body {
     .carouselCss{
         margin-left: 0% !important;
     }
+    .main-footer {
+         height: 10rem;
+    }
 
 
 }
@@ -628,6 +636,9 @@ body {
     #carouselExampleControls{
         margin-left: 11%;
     }
+    .main-footer {
+        height: 10rem;
+   }
     .carouselCss{
         margin-left: 0% !important;
     }
