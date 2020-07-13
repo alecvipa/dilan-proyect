@@ -621,6 +621,7 @@ body {
     }
     .main-footer {
          height: 10rem;
+         margin-top: 2%;
     }
 
 
@@ -638,6 +639,7 @@ body {
     }
     .main-footer {
         height: 10rem;
+        margin-top: 2%;
    }
     .carouselCss{
         margin-left: 0% !important;
