@@ -147,7 +147,7 @@ app.get("/api/:zips?", function (req, res) {
   var zipCodes = [
     {
       name: "Códigos Postales Disponibles",
-      disponibles: ["55140", "SuperPromo1", "52938"],
+      disponibles: ["HSBC15", "SuperPromo1", "52938"],
     },
   ];
 
