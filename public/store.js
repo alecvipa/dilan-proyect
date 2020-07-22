@@ -96,6 +96,8 @@ $(document).ready(function () {
     $(".btnRegresar").on("click", function () {
         $("#experienciasCards, .bannerTemporada, .barraColores").show();
         $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6, .zipCodeBrowser, .zipAlert, .zipAlert2, .formdiv, .purchDiv, .unit5Premium, .unit6Premium, .zonasEntrega, .zonaNotFound").hide();
+        // $("html, body").animate({ scrollTop: 5 }, "slow");
+        document.getElementById('experienciaScroll').scrollIntoView(true);
     });
 
     // Función para on click purchase button, mostrar el div de detalles de compra
@@ -132,6 +134,9 @@ $(document).ready(function () {
         $("#experienciasCards").hide();
         $(".zonasEntrega, .zonaNotFound").show(1000)
         $(".unit1, .unit2, .unit3, .unit4, .unit5Premium, .unit6Premium").hide();
+        // $("html, body").animate({ scrollTop: 5 }, "slow");
+        document.getElementById("contactScrollWarning").scrollIntoView(true);
+        
 
     });
 
