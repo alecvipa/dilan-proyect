@@ -145,6 +145,13 @@ $(document).ready(function () {
         document.getElementById('experienciaScroll').scrollIntoView(true);
 
     });
+    // $("#clickExperienciasMenu2").on("click", function() {
+    //     window.location.href = "/";
+    //     window.onload = function() {
+    //         document.getElementById('experienciaScroll').scrollIntoView(true);
+
+    //       };
+    // });
 
     // Función para ver premium box
     $(".unit5Premium, .unit6Premium").hide();
