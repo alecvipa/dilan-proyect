@@ -139,6 +139,12 @@ $(document).ready(function () {
         
 
     });
+    $("#clickExperienciasMenu").on("click", function() {
+        $("#experienciasCards").show();
+        $(".unit1, .unit2, .unit3, .unit4, .unit5Premium, .unit6Premium").hide();
+        document.getElementById('experienciaScroll').scrollIntoView(true);
+
+    });
 
     // Función para ver premium box
     $(".unit5Premium, .unit6Premium").hide();
