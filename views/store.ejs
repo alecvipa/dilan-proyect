@@ -843,7 +843,7 @@
                 <span class="cart-total-price">0.01</span>
                 <br>
                 <button type="button" class="btn btn-secondary">
-                    Costo de envío <span class="badge badge-light">$76</span>
+                    Costo de envío <section class="badge badge-light">$76</section>
                   </button>
             </div>
             <button class="btn btn-primary btn-purchase pointer" type="button" style="display: none;">COMPRAR</button>
@@ -865,7 +865,7 @@
         </div>
 
     </section>
-    <div class="zipCodeBrowser center googleSubTitulo">
+    <div class="zipCodeBrowser center googleSubTitulo" id="zipCoderdrop">
         <h4 class="zipBrowserTitle" id="zipCodeBrowsing">¿Cuentas con código promocional?</h4>
         <div class="container">
             <div class="col-md"></div>
@@ -997,6 +997,7 @@
             $(".purchDiv").show();
             $(".formdiv").hide();
             $(".zipCodeBrowser").show(1000)
+            document.getElementById('zipCoderdrop').scrollIntoView(true);
             // $(".btn-purchase").prop('disabled', false);
         });
 
