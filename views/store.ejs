@@ -844,7 +844,7 @@
                 <br>
                 <button type="button" class="btn btn-secondary">
                     Costo de envío <section class="badge badge-light">$76</section>
-                  </button>
+                </button>
             </div>
             <button class="btn btn-primary btn-purchase pointer" type="button" style="display: none;">COMPRAR</button>
             <div id="paypal-button-container"></div>
@@ -1002,6 +1002,12 @@
         });
 
         $(".btn-payPal").on("click", function () {
+            var theAmountCero = $(".cart-total span").text().replace("$", '').trim();
+            var theAmountUno = parseFloat(theAmountCero);
+            var theAmountDos = theAmountUno + 79;
+            console.log(theAmountDos);
+            $(".cart-total span").html(theAmountDos);
+
             $(".zipCodeBrowser").hide();
             paypal.Buttons({
                 createOrder: function (data, actions) {
