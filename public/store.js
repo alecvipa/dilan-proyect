@@ -25,6 +25,9 @@ $(document).ready(function () {
     $(".shop-item-button").on("click", function(){
         $(".nxt1").prop('disabled', false);
     });
+    $(".volverExpCero").on("click", function(){
+        window.location.replace("https://www.thewowbox.mx/inicio");
+    });
 
     
 
