@@ -21,6 +21,13 @@ $(document).ready(function () {
         $('.imgPre').css("background-image", "url(Images/cVinosCuatro.jpg)");
     });
 
+    $(".nxt1").prop('disabled', true);
+    $(".shop-item-button").on("click", function(){
+        $(".nxt1").prop('disabled', false);
+    });
+
+    
+
     $('.carousel').carousel({
         interval: 2000
       })
