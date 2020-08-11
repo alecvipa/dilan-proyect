@@ -481,6 +481,7 @@ body {
     }
 .contactBanner{
     margin-top: 5%;
+    margin-bottom: 5%;
 }
 .contactList{
     margin-left: 7%;
@@ -490,6 +491,12 @@ body {
     max-width: 100px;
     /* margin-left: 15%; */
 }
+
+.faqDiv{
+    margin-top: 4%;
+    margin-bottom: 7%;
+}
+
 @media (min-width: 401px) and (max-width: 768px) {
     #carouselExampleControls{
         margin-left: 18%;
@@ -721,6 +728,7 @@ body {
     .logoWow{
         height: 16rem;
         width: 18rem;
+        margin-left: 5%;
     }
     .contactList{
         width: 80%;
