@@ -9,6 +9,7 @@
       "brief":"Descubre deliciosos vinos de distintos orígenes y aprende a maridarlos en esta cata con quesos en compañía de tu pareja, familia o amigos.",
       "incluye": ["1 botella de vino rosado 750ml (México)", "1 botella de vino tinto Crianza 750ml (España)", "1 botella de vino tinto Reserva 750ml (Argentina)","Charola de quesos", "Cata en video"],
       "people":"4-5",
+      "peoplePremium":"2-3",
       "imgName": "cVinosUno.jpg",
       "imgName2": "cVinosDos.jpg",
       "imgName3": "cVinosTres.jpg",
@@ -23,6 +24,7 @@
       "brief":"Conoce matices inigualables que la malta otorga en esta cata de cervezas artesanales con chocolate.",
       "incluye": ["6 cervezas de 3 estilos diferentes", "Selección de chocolates", "Cata en video"],
       "people":"2",
+      "peoplePremium":"4",
       "imgName": "cCervezaUno.jpg",
       "imgName2": "cCervezaDos.jpg",
       "imgName3": "cCervezaTres.jpg",
@@ -85,6 +87,22 @@
       "imgName2": "hCelebrarDos.jpg",
       "imgName3": "hCelebrarTres.jpg",
       "imgName4": "hCelebrarTres.jpg"
+    }
+    ,
+    {
+      "id": 7,
+      "name": "Cata de vinos para 2-3 personas",
+      "price": 99900,
+      "firstPrice":99900,
+      "description": "Sal de la rutina y disfruta de esta cata de vinos desde la comodidad de tu casa. Además de probar estas deliciosas opciones, te darás cuenta de que no necesitas ser experto para seleccionar platillos simples para acompañar y aprenderás algunos tips básicos en compañía de tu familia o amigos.",
+      "brief":"Descubre deliciosos vinos de distintos orígenes y aprende a maridarlos en esta cata con quesos en compañía de tu pareja, familia o amigos.",
+      "incluye": ["1 botella de vino rosado 750ml (México)", "1 botella de vino tinto Reserva 750ml (Argentina)", "Charola de quesos", "Cata en video"],
+      "people":"4-5",
+      "peoplePremium":"2-3",
+      "imgName": "cVinosUno.jpg",
+      "imgName2": "cVinosDos.jpg",
+      "imgName3": "cVinosTres.jpg",
+      "imgName4": "cVinosCuatro.jpg"
     }
     
   ]

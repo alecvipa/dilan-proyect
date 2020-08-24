@@ -6,7 +6,7 @@ $(document).ready(function () {
     //     ready()
     // }
     $(".zipAlert, .zipAlert2, .formdiv, .purchDiv, .zipCodeBrowser, .zonasEntrega, .zonaNotFound").hide();
-    $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6, .verPropuesta1, .verPropuesta3, .verPropuesta4, .verPropuesta5, .verPropuesta6, .verProp1, .verProp, .verProp3, .verProp4, .verProp6, .btnPre5").hide();
+    $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6, .verPropuesta3, .verPropuesta4, .verPropuesta5, .verPropuesta6, .verProp1, .verProp, .verProp3, .verProp4, .verProp6, .btnPre5, .unit7Premium, .btnPre7").hide();
     // Función para botones de imágen
     $(".btn1first").on("click", function () {
         $('.imgPre').css("background-image", "url(Images/cVinosUno.jpg)");
@@ -20,6 +20,7 @@ $(document).ready(function () {
     $(".btn1four").on("click", function () {
         $('.imgPre').css("background-image", "url(Images/cVinosCuatro.jpg)");
     });
+    
 
     $(".nxt1").prop('disabled', true);
     $(".shop-item-button").on("click", function(){
@@ -102,10 +103,24 @@ $(document).ready(function () {
         $('.imgPre').css("background-image", "url(Images/hCelebrarTres.jpg)");
     });
     $(".btn6third").hide();
+
+    $(".btn7first").on("click", function () {
+        $('.imgPre').css("background-image", "url(Images/cVinosUno.jpg)");
+    });
+    $(".btn7second").on("click", function () {
+        $('.imgPre').css("background-image", "url(Images/cVinosDos.jpg)");
+    });
+    $(".btn7third").on("click", function () {
+        $('.imgPre').css("background-image", "url(Images/cVinosTres.jpg)");
+    });
+    $(".btn7four").on("click", function () {
+        $('.imgPre').css("background-image", "url(Images/cVinosCuatro.jpg)");
+    });
+
     
     $(".btnRegresar").on("click", function () {
         $("#experienciasCards, .bannerTemporada, .barraColores").show();
-        $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6, .zipCodeBrowser, .zipAlert, .zipAlert2, .formdiv, .purchDiv, .unit5Premium, .unit6Premium, .zonasEntrega, .zonaNotFound").hide();
+        $(".unit1, .unit2, .unit3, .unit4, .unit5, .unit6, .zipCodeBrowser, .zipAlert, .zipAlert2, .formdiv, .purchDiv, .unit5Premium, .unit6Premium, .zonasEntrega, .zonaNotFound, .unit7Premium").hide();
         // $("html, body").animate({ scrollTop: 5 }, "slow");
         document.getElementById('experienciaScroll').scrollIntoView(true);
     });
@@ -143,7 +158,7 @@ $(document).ready(function () {
     $(".nxt1").on("click", function () {
         $("#experienciasCards").hide();
         $(".zonasEntrega, .zonaNotFound").show(1000)
-        $(".unit1, .unit2, .unit3, .unit4, .unit5Premium, .unit6Premium").hide();
+        $(".unit1, .unit2, .unit3, .unit4, .unit5Premium, .unit6Premium, .unit7Premium").hide();
         // $("html, body").animate({ scrollTop: 5 }, "slow");
         document.getElementById("contactScrollWarning").scrollIntoView(true);
         

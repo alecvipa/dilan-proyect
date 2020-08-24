@@ -313,7 +313,7 @@
                                 <br>
                                 <span class="badge pointer badge-secondary verPropuesta<%= item.id %>"
                                     style="background-color: goldenrod; " onclick="unit<%= item.id %>Propuesta()"><i
-                                        class="fas fa-users"></i> Ver para 4 personas</span>
+                                        class="fas fa-users"></i> Ver para <%= item.peoplePremium %> personas</span>
                                 <br>
                                 <button class="btn pointer btn-light btnRegresar btnReMargin" type="button"><i
                                         class="fas fa-undo"></i>
@@ -484,7 +484,7 @@
                                 <br>
                                 <span class="badge pointer badge-secondary verProp<%= item.id %>"
                                     style="background-color: goldenrod; " onclick="unit<%= item.id %>Propuesta()"><i
-                                        class="fas fa-user-friends"></i> Ver para 2 personas</span>
+                                        class="fas fa-user-friends"></i> Ver para <%= item.people %> personas</span>
                                 <br>
                                 <button class="btn pointer btn-light btnRegresar btnReMargin" type="button"><i
                                         class="fas fa-undo"></i>
@@ -979,14 +979,22 @@
             $("html, body").animate({ scrollTop: 5 }, "slow");
             return false;
         };
+        function unit1Propuesta() {
+            $(".unit1, .unit6Premium, .unit5Premium, .unit3, .unit2, .unit4, #experienciasCards ").hide();
+            $(".unit7Premium").show();
+        };
         function unit2Propuesta() {
             $(".unit1, .unit6Premium, .unit5Premium, .unit3, .unit2, .unit4, #experienciasCards ").hide();
             $(".unit5Premium").show();
-        }
+        };
         function unit5Propuesta() {
             $(".unit1, .unit6Premium, .unit5Premium, .unit3, .unit4, #experienciasCards, .unit5Premium ").hide();
             $(".unit2").show();
-        }
+        };
+        function unit7Propuesta() {
+            $(".unit1, .unit6Premium, .unit5Premium, .unit3, .unit4, #experienciasCards, .unit5Premium, .unit7Premium ").hide();
+            $(".unit1").show();
+        };
 
         $(".dropdown-item").on("click", function () {
             // $(".zonaNotFound").hide()
