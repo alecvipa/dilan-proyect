@@ -1031,7 +1031,7 @@
                 onApprove: function (data, actions) {
                     $(".formdiv").show();
                     $(".purchDiv").hide();
-                    var cookieValue = [$("input[type=hidden][name=title1]").val(), $("input[type=number][name=quantity1]").val(), $("input[type=hidden][name=title2]").val(), $("input[type=number][name=quantity2]").val(), $("input[type=hidden][name=title3]").val(), $("input[type=number][name=quantity3]").val(), $("input[type=hidden][name=title4]").val(), $("input[type=number][name=quantity4]").val(), $("input[type=hidden][name=title5]").val(), $("input[type=number][name=quantity5]").val(), $("input[type=hidden][name=title6]").val(), $("input[type=number][name=quantity6]").val()];
+                    var cookieValue = [$("input[type=hidden][name=title1]").val(), $("input[type=number][name=quantity1]").val(), $("input[type=hidden][name=title2]").val(), $("input[type=number][name=quantity2]").val(), $("input[type=hidden][name=title3]").val(), $("input[type=number][name=quantity3]").val(), $("input[type=hidden][name=title4]").val(), $("input[type=number][name=quantity4]").val(), $("input[type=hidden][name=title5]").val(), $("input[type=number][name=quantity5]").val(), $("input[type=hidden][name=title6]").val(), $("input[type=number][name=quantity6]").val(), $("input[type=hidden][name=title7]").val(), $("input[type=number][name=quantity7]").val()];
                     var cookie2 = [];
                     if (cookieValue[0]) {
                         cookie2.push("Experiencia: " + [cookieValue[0], " Cantidad: " + cookieValue[1]]);
@@ -1050,6 +1050,9 @@
                     }
                     if (cookieValue[10]) {
                         cookie2.push("Experiencia: " + [cookieValue[10], " Cantidad: " + cookieValue[11]]);
+                    }
+                    if (cookieValue[12]) {
+                        cookie2.push("Experiencia: " + [cookieValue[12], " Cantidad: " + cookieValue[13]]);
                     }
 
                     document.getElementById("cartBrief").value = cookie2;
